@@ -1,7 +1,7 @@
 {
-  "name": "codeial",
+  "name": "Varta Chat",
   "version": "1.0.0",
-  "description": "Social Media Application",
+  "description": "Social Web Application",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
