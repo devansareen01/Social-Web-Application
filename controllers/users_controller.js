@@ -1,3 +1,5 @@
+const User = require('../models/user');
+
 module.exports.profile = function (req, res) {
     return res.render('users', {
         title: "USERS"
@@ -18,12 +20,26 @@ module.exports.signIn = function (req, res) {
 }
 
 //get the sign up data
-module.exports.create = function (req, res) {
-    //todo
+module.exports.create = async function (req, res) {
+    try {
+        const user = await User.findOne({ email: req.body.email });
+
+        if (!user) {
+            const createdUser = await User.create(req.body);
+            return res.redirect('/users/sign_in');
+        } else {
+            return res.redirect('back');
+        }
+    } catch (err) {
+        console.log('Error:', err);
+        // Handle the error and send an appropriate response
+        // For example: res.status(500).send('Internal Server Error');
+    }
 }
+
 
 // sign in and create a session for user
 
 module.exports.createSession = function (req, res) {
-    //todo
+    
 }
