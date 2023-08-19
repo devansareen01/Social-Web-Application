@@ -4,16 +4,20 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.createCopy {
+    display: none;
+}
+
 body {
     background-color: #F7F7F7;
 }
 
 .form {
     background-color: white;
-    margin: 70px 250px 70px 250px;
-    height: 420px;
+    margin: 5vw 20vh;
+    height: 65vh;
     display: flex;
-    padding: 40px;
+    padding: 3vw;
 
 }
 
@@ -31,8 +35,7 @@ body {
 }
 
 .left img {
-    height: 280px;
-    /* width: 95%; */
+    height: 25vmax;
 }
 
 .create {
@@ -41,14 +44,14 @@ body {
     justify-content: center;
     display: flex;
     font-size: 1.1rem;
-    margin-top: 10px;
+
 }
 
 .inputbox input {
     border: none;
-    height: 50px;
+    height: 10vh;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 1vh;
     font-size: 1.2rem;
 }
 
@@ -64,14 +67,14 @@ body {
 
 h1 {
     font-weight: 900;
-    margin-bottom: 50px;
+    margin-bottom: 6vh;
 }
 
 .loginBtn input {
     background-color: #007AFF;
     border: none;
     color: white;
-    height: 40px;
+    height: 7vh;
 
 }
 
@@ -81,8 +84,47 @@ h1 {
     align-content: center;
     justify-content: center;
     border-radius: 3px;
-    width: 330px;
+    width: 28vw;
     margin-top: 0px;
     margin-bottom: 0px;
     margin: auto;
+}
+
+@media (max-width:750px) {
+
+    .form {
+        height: calc(100vh - 150px);
+    }
+
+    .right {
+        width: 100%;
+        margin: calc(100vh-50px);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inputbox input {
+        border: none;
+        height: 10vh;
+        width: 100%;
+        margin-top: 1vh;
+        font-size: 1.2rem;
+    }
+
+
+
+    .left {
+        display: none;
+    }
+
+    .createCopy {
+        display: block;
+        text-decoration: none;
+        align-content: center;
+        justify-content: center;
+        display: flex;
+        font-size: 1.1rem;
+    }
+
+
 }
