@@ -3,34 +3,34 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="login&signupStyle.css">
+    <link rel="stylesheet" href="/css/sign_in.css">
 </head>
 
 <body>
-    <form action="">
+    <form action="/users/create-session" method="post">
 
         <div class="form signin">
             <div class="left">
-                <img src="image.jpg" alt="">
+                <img src="/images/image.jpg" alt="image not found">
                 <p> <a href="#" class="create">Create an Account</a> </p>
             </div>
             <div class="right">
-                <h1>Log In</h1>                
+                <h1>Log In</h1>
                 <div class="inputbox">
                     <i class="fa-regular fa-user fa-beat"></i>
                     <input placeholder="Your Name" type="text" name="username" required="required">
-                    
+
                 </div>
                 <div class="inputbox">
                     <i class="fa-solid fa-lock"></i>
-                    <input  placeholder="Password" type="password" name="password" required="'required">
+                    <input placeholder="Password" type="password" name="password" required="'required">
                 </div>
                 <div class="loginBtn">
                     <input type="submit" value="Login">
                 </div>
-                
+
             </div>
-            
+
         </div>
 
     </form>

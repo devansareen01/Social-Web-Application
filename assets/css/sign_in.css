@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #F7F7F7;
+}
+
+.form {
+    background-color: white;
+    margin: 70px 250px 70px 250px;
+    height: 420px;
+    display: flex;
+    padding: 40px;
+
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.left {
+    margin-top: 50px;
+    width: 50%;
+    align-content: center;
+    margin-right: 10px;
+}
+
+.left img {
+    height: 280px;
+    /* width: 95%; */
+}
+
+.create {
+    text-decoration: none;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.inputbox input {
+    border: none;
+    height: 50px;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 1.2rem;
+}
+
+.inputbox input:hover {
+    border: grey solid 2px;
+}
+
+.inputbox {
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+
+h1 {
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.loginBtn input {
+    background-color: #007AFF;
+    border: none;
+    color: white;
+    height: 40px;
+
+}
+
+.loginBtn {
+    background-color: #007AFF;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-radius: 3px;
+    width: 330px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: auto;
+}

@@ -13,6 +13,17 @@ module.exports.signUp = function (req, res) {
 //render sign up page
 module.exports.signIn = function (req, res) {
     return res.render('user_sign_in', {
-        title: "VARTACHAT | Sign Up"
+        title: "VARTACHAT | Sign In"
     });
+}
+
+//get the sign up data
+module.exports.create = function (req, res) {
+    //todo
+}
+
+// sign in and create a session for user
+
+module.exports.createSession = function (req, res) {
+    //todo
 }
