@@ -1,39 +1,39 @@
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="/css/sign_up.css">
 
 
 <body>
-
     <form action="/users/create" method="post">
-        <div class="container">
-            <div class="form signup">
-                <h2>Sign up</h2>
-                <div class="inputbox">
-                    <input type="text" required="required" name="name">
-                    <i class="fa-regular fa-user fa-beat"></i>
-                    <span>username</span>
-                </div>
-                <div class="inputbox">
-                    <input type="email" name="email" required="required">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>email address</span>
-                </div>
-                <div class="inputbox">
-                    <input type="password" name="password" required="'required">
-                    <i class="fa-solid fa-lock"></i>
-                    <span> create password</span>
-                </div>
-                <div class="inputbox">
-                    <input type="password" name="password" required="'required">
-                    <i class="fa-solid fa-lock"></i>
-                    <span> confirm password</span>
-                </div>
-                <div class="inputbox"></div>
-                <input type="submit" name="submit" value="Create Account">
+        <div class="form">
+
+            <div class="left">
+                <img src="/images/image2.jpg" alt="">
+                <p class="create"> <a href="#">Already Registeed?</a></p>
             </div>
-            <p>Already Account ? / <a href="#" class="login">Login</a></p>
-        </div>
+            <div class="right">
+                <h1>Sign up</h1>
+                <div class="inputbox">
+                    <i class="fa-regular fa-user fa-beat"></i>
+                    <input placeholder="Your Name" type="text" required="required" name="name">
+                </div>
+                <div class="inputbox">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input placeholder="Your Email address" type="email" name="email" required="required">
+                </div>
+                <div class="inputbox">
+                    <i class="fa-solid fa-lock"></i>
+                    <input placeholder="Create Password" type="password" name="password" required="'required">
+                </div>
+                <div class="inputbox">
+                    <i class="fa-solid fa-lock"></i>
+                    <input placeholder="ConfirmPassword" type="password" name="password" required="'required">
+                </div>
+                <p class="createCopy"> <a href="#">Already Registeed?</a></p>
+                <div class="loginBtn">
+                    <input type="submit" name="submit" value="Create Account">
+                </div>
+
+            </div>
+
     </form>
-    
 </body>

@@ -4,27 +4,21 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.createCopy {
-    display: none;
-}
-
 body {
     background-color: #F7F7F7;
 }
 
-.form {
-    background-color: white;
-    margin: 5vw 20vh;
-    height: 65vh;
-    display: flex;
-    padding: 3vw;
-
+.createCopy {
+    display: none;
 }
 
-.right {
+.form {
+    background-color: white;
+    margin: 9vmin 20vh;
+    height: calc(100vh-200px);
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    padding: 2vw;
+
 }
 
 .left {
@@ -34,22 +28,20 @@ body {
     margin-right: 10px;
 }
 
-.left img {
-    height: 25vmax;
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
-.create {
-    text-decoration: none;
-    align-content: center;
-    justify-content: center;
-    display: flex;
-    font-size: 1.1rem;
-
+.left img {
+    height: 25vmax;
+    margin-left: 5vw;
 }
 
 .inputbox input {
     border: none;
-    height: 10vh;
+    height: 5vh;
     width: 100%;
     margin-top: 1vh;
     font-size: 1.2rem;
@@ -65,10 +57,19 @@ body {
     width: 80%;
 }
 
-
 h1 {
     font-weight: 900;
     margin-bottom: 6vh;
+}
+
+.create {
+    text-decoration: none;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.1rem;
+    margin-top: 6vh;
+
 }
 
 .loginBtn input {
@@ -76,7 +77,6 @@ h1 {
     border: none;
     color: white;
     height: 7vh;
-
 }
 
 .loginBtn {
@@ -94,7 +94,7 @@ h1 {
 @media (max-width:750px) {
 
     .form {
-        height: calc(100vh - 150px);
+        height: calc(100vh - 85px);
     }
 
     .right {
@@ -106,7 +106,7 @@ h1 {
 
     .inputbox input {
         border: none;
-        height: 10vh;
+        height: 7vh;
         width: 100%;
         margin-top: 1vh;
         font-size: 1.2rem;
@@ -125,7 +125,6 @@ h1 {
         justify-content: center;
         display: flex;
         font-size: 1.1rem;
+        margin-bottom: 20px;
     }
-
-
 }
