@@ -1,10 +1,26 @@
 const User = require('../models/user');
 
-module.exports.profile = function (req, res) {
-    return res.render('users', {
-        title: "USERS"
-    });
+module.exports.profile =  function (req, res) {
+    try {
+        if (req.cookies.user_id) {
+            const user =  User.findById(req.cookies.user_id); // Use await here
+           
+            if (user) {
+                return res.render('users', {
+                    title: "User Profile",
+                    name: req.body.name
+
+                });
+            }
+            return res.redirect('/users/sign_in');
+        } else {
+            return res.redirect('/users/sign_in');
+        }
+    } catch (err) {
+        console.log('Error:', err);
+    }
 }
+
 //render sign in page
 module.exports.signUp = function (req, res) {
     return res.render('user_sign_up', {
@@ -41,5 +57,34 @@ module.exports.create = async function (req, res) {
 // sign in and create a session for user
 
 module.exports.createSession = function (req, res) {
+    //find the user
+    try{
+        const user = User.findOne({email : req.body.email});
+
+        //handle user found
+        if(user){
+            // handle password which don't match
+            if(user.password != req.password){
+                return res.redirect('back');
+            }
+
+             //handle session creation
+            res.cookie('user_id',user._id);
+            return res.redirect('/users/profile');
+           
+        }else{
+            //  handle user not found
+            res.redirect('back');
+        }
+    }catch(err){
+        console.log('Error:', err);
+    }
     
+
+    
+
+    
+
+
+    //handle user not find
 }
