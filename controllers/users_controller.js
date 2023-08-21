@@ -1,8 +1,9 @@
 const User = require('../models/user');
 
 module.exports.profile = function (req, res) {
-    return res.render('users', {
-        title: "USERS"
+    return res.render('user_profile', {
+        title: "USERS Profile",
+
     });
 }
 //render sign in page
@@ -41,5 +42,6 @@ module.exports.create = async function (req, res) {
 // sign in and create a session for user
 
 module.exports.createSession = function (req, res) {
-    
+
+    return res.redirect('/users/profile');
 }
