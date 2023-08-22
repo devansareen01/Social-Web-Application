@@ -3,7 +3,9 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
 // Authentication using Passport
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy({
+    usernameField :'email'
+},      
     async function(email, password, done) { // Use an async function for asynchronous operations
         try {
             const user = await User.findOne({ email: email }); // Await the findOne operation
@@ -14,10 +16,10 @@ passport.use(new LocalStrategy(
             }
             
             // Perform password comparison here, you've commented this out
-            // if (password !== user.password) {
-            //     console.log('Invalid password');
-            //     return done(null, false);
-            // }
+            if (password !== user.password) {
+                console.log('Invalid password');
+                return done(null, false);
+            }
 
             return done(null, user);
 
