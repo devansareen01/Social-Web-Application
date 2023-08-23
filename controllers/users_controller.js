@@ -1,3 +1,4 @@
+const { model } = require('mongoose');
 const User = require('../models/user');
 
 module.exports.profile = function (req, res) {
@@ -8,6 +9,10 @@ module.exports.profile = function (req, res) {
 }
 //render sign in page
 module.exports.signUp = function (req, res) {
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
+
     return res.render('user_sign_up', {
         title: "VARTACHAT | Sign Up"
     });
@@ -15,6 +20,10 @@ module.exports.signUp = function (req, res) {
 
 //render sign up page
 module.exports.signIn = function (req, res) {
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
+
     return res.render('user_sign_in', {
         title: "VARTACHAT | Sign In"
     });
@@ -44,4 +53,14 @@ module.exports.create = async function (req, res) {
 module.exports.createSession = function (req, res) {
 
     return res.redirect('/users/profile');
+}
+
+
+module.exports.destroySession = function(req , res){
+        req.logout(function(err) {
+        if (err) {
+            console.error(err);
+        }
+        return res.redirect('/');
+    });
 }
