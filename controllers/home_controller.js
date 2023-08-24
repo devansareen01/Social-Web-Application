@@ -1,6 +1,14 @@
-module.exports.home = function (req, res) {
-    res.cookie('user_id',25);
-    return res.render('home', {
-        title: "HOME"
-    });
+const Post = require('../models/posts');
+
+module.exports.home = async function (req, res) {
+    try {
+        const posts = await Post.find({}).populate('user').exec();
+        return res.render('home', {
+            title: "VARTACHAT | HOME",
+            posts: posts
+        });
+    } catch (error) {
+        console.log("error" , error);
+        return;
+    }
 }
