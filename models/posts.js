@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const postScehma  = mongoose.Schema({
+const postScehma  =  mongoose.Schema({
     content :{
         type :String,
         required : true
