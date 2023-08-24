@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* Reset some default styles */
+
+/* Header styles */
+header {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation bar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+/* Common button styles */
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sign Out button */
+.sign-out {
+    background-color: #ff6347;
+    /* Adjust to your desired color */
+    color: white;
+}
+
+.sign-out:hover {
+    background-color: #d14830;
+    /* Darker shade on hover */
+}
+
+/* Sign In and Sign Up buttons */
+.sign-up,
+.sign-in {
+    background-color: #3498db;
+    /* Adjust to your desired color */
+    color: white;
+}
+
+.sign-up:hover,
+.sign-in:hover {
+    background-color: #2980b9;
+    /* Darker shade on hover */
+}
