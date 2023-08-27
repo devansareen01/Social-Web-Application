@@ -11,8 +11,8 @@ body {
 
 .form {
   background-color: white;
-  margin: 9vmin 20vh;
-  height: calc(100vh-200px);
+  margin: 2vh 10vw 0vh 10vw;
+  height: calc(100vh-100px);
   display: flex;
   padding: 2vw; }
 
@@ -62,7 +62,7 @@ h1 {
   background-color: #007AFF;
   border: none;
   color: white;
-  height: 7vh; }
+  height: 5vh; }
 
 .loginBtn {
   background-color: #007AFF;
