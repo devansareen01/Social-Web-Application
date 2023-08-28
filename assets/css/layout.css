@@ -70,3 +70,143 @@ header {
     background-color: #2980b9;
     /* Darker shade on hover */
 }
+
+#new-post-form {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+#new-post-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+}
+#new-post-form input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#posts-list-container li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#posts-list-container p {
+    margin-bottom: 10px;
+}
+#posts-list-container small {
+    color: #888;
+}  
+.post-comments {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+.post-comments input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.post-comments input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.post-comments-list {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.post-comments-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.post-comments-list p {
+    margin-bottom: 10px;
+}
+
+/* Optional: Style for hover effect */
+#posts-list-container li:hover {
+    background-color: #f0f0f0;
+}
+#posts-list-container {
+    margin: 0 auto;
+    max-width: 600px;
+    /* Adjust the width as needed */
+}
+
+/* Add space around the post container */
+#feed-posts {
+    padding: 20px;
+}
+
+/* Style for post and comment labels */
+.post-label,
+.comment-label {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Optional: Style for hover effect on comments */
+.post-comments-list p:hover {
+    background-color: #f5f5f5;
+}
+#new-post-form textarea,
+.post-comments input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    box-sizing: border-box;
+    /* Add this to include padding and border in width calculation */
+}
+
+#new-post-form input[type="submit"],
+.post-comments input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.post-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.post-header p {
+    margin-right: 5px;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-right: 5px;
+}
