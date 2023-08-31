@@ -40,24 +40,4 @@ module.exports.destroy = async function(req, res) {
     }
 };
 
-module.exports.destroyComment =  async function( req  , res){
-    try {
-        const post = await Post.findById(req.params.id);
-        
-        if(!post){
-            res.redirect('back');
-        }
-         if (post.user.toString() === req.user.id) {
-            await Comment.deleteOne();
-            return res.redirect('back');
-        } else {
-            // User is not authorized to delete this post
-            return res.redirect('back');
-        }
-
-    } catch (error) {
-        console.error(error);
-        return res.redirect;
-    }
-}
 
