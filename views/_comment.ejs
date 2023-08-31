@@ -1,0 +1,23 @@
+<li>
+    <p>
+        <% if (locals.user && locals.user.id==comment.user.id) { %>
+            <div class="delete-container">
+                <small>
+                    <button class="delete-button"><a href="/comments/destroy/<%= comment.id %>">Delete</a></button>
+                </small>
+            </div>
+            <% } %>
+                <!-- <% if (locals.user && post._id == comment.post.id) { %>
+            <div class="delete-container">
+                <small>
+                    <button class="delete-button"><a href="/comments/destroy/<%= comment.id %>">Delete</a></button>
+                </small>
+            </div>
+        <% } %> -->
+                <%= comment.content %>
+                    <br>
+                    <small>
+                        <%= comment.user.name %>
+                    </small>
+    </p>
+</li>
