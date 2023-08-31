@@ -10,6 +10,7 @@ header {
     background-color: #f0f0f0;
     padding: 5px 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 /* Navigation bar styles */
@@ -209,4 +210,36 @@ header {
 .user-name {
     font-weight: bold;
     margin-right: 5px;
+}
+/* Styling for the delete container */
+.delete-container {
+    text-align: right;
+    /* Align the delete button to the right */
+    margin-top: 10px;
+    /* Add some spacing between the delete button and the post content */
+}
+
+/* Styling for the delete button */
+.delete-button {
+    background-color: white;
+    /* Red background color */
+    color: #fff;
+    /* White text color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.delete-button:hover {
+    background-color: #ff3333;
+    /* Darker red on hover */
+}
+
+/* Optional: Add a subtle shadow on hover for depth */
+.delete-button:hover {
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
