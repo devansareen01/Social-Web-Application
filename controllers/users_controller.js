@@ -1,15 +1,24 @@
 const { model } = require('mongoose');
 const User = require('../models/user');
 
-module.exports.profile = function (req, res) {
-    return res.render('user_profile', {
-        title: "USERS Profile",
+module.exports.profile = async function (req, res) {
+    
+    try {
+        const user = await User.findById(req.params.id);
 
-    });
+        return res.render('user_profile', {
+            title: "USER Profile",
+            profile_user: user
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('back');
+    }
 }
+
 //render sign in page
 module.exports.signUp = function (req, res) {
-    if(req.isAuthenticated()){
+    if (req.isAuthenticated()) {
         return res.redirect('/users/profile');
     }
 
@@ -20,7 +29,7 @@ module.exports.signUp = function (req, res) {
 
 //render sign up page
 module.exports.signIn = function (req, res) {
-    if(req.isAuthenticated()){
+    if (req.isAuthenticated()) {
         return res.redirect('/users/profile');
     }
 
@@ -56,8 +65,8 @@ module.exports.createSession = function (req, res) {
 }
 
 
-module.exports.destroySession = function(req , res){
-        req.logout(function(err) {
+module.exports.destroySession = function (req, res) {
+    req.logout(function (err) {
         if (err) {
             console.error(err);
         }

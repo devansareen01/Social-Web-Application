@@ -28,8 +28,8 @@
                     <div class="comment-label">Comments</div>
                     <ul id="post-comments-<%= post._id %>">
                         <% for (comment of post.comments) { %>
-                                <%-include('_comment')-%>    
-                        <% } %>
+                            <%-include('_comment')-%>
+                                <% } %>
                     </ul>
                 </div>
     </div>

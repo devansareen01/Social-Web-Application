@@ -10,7 +10,7 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
-const MongoStore  = require('connect-mongo');
+const MongoStore = require('connect-mongo');
 // const sassMiddleware = require('node-sass-middleware')
 // extract style and scripts from sub pages into the layout
 
@@ -40,17 +40,17 @@ app.set('views', './views');
 app.use(session({
     name: 'VARTACHAT',
     //todo change the secret before deployment in production mode
-    secret :"blah",
-    saveUniinitialized :false,
-    resave:false,
-    cookie:{
-        maxAge:(1000 *60 *100)
+    secret: "blah",
+    saveUniinitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
     },
-    store:  MongoStore.create(
+    store: MongoStore.create(
         {
-        mongooseConnection:db,
-        mongoUrl:'mongodb://127.0.0.1/VARTACHAT_development',
-        autoRemove :'disabled'
+            mongooseConnection: db,
+            mongoUrl: 'mongodb://127.0.0.1/VARTACHAT_development',
+            autoRemove: 'disabled'
         }
     )
 }));
