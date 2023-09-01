@@ -2,7 +2,7 @@ const { model } = require('mongoose');
 const User = require('../models/user');
 
 module.exports.profile = async function (req, res) {
-    
+
     try {
         const user = await User.findById(req.params.id);
 
@@ -13,6 +13,19 @@ module.exports.profile = async function (req, res) {
     } catch (error) {
         console.log(error);
         res.redirect('back');
+    }
+}
+module.exports.update = async function (req, res) {
+    if (req.user.id == req.params.id) {
+        try {
+            await User.findByIdAndUpdate(req.params.id, req.body);
+            res.redirect('back');
+        } catch (error) {
+            console.log(error);
+            res.redirect('back');
+        }
+    } else {
+        return res.status(401).send('Unauthorized');
     }
 }
 

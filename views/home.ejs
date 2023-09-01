@@ -17,14 +17,17 @@
 </section>
 
 <section id=user_friends>
-    <h3>Friends</h3>
-    <% for(u of all_users) {%>
-        <p>
-            <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
-                <%= u.name %>
-            </a>
+
+    <% if(locals.user){%>
+        <h3>Friends</h3>
+        <% for(u of all_users) {%>
+            <p>
+                <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
+                    <%= u.name %>
+                </a>
 
 
-        </p>
-        <%}%>
+            </p>
+            <%}%>
+                <%}%>
 </section>
