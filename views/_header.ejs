@@ -8,6 +8,11 @@
         <ul class="nav-items">
             <% if (locals.user) { %>
                 <li class="nav-item user-name">
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item user-name">
                     <a href="/users/profile/<%= user.id%>">
                         <%= locals.user.name %>
                     </a>

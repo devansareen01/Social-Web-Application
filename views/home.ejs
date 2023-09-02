@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/home.css">
+
 <section id="feed-posts">
     <h4>Posts</h4>
     <% if (locals.user) { %>
@@ -16,18 +18,17 @@
             </div>
 </section>
 
-<section id=user_friends>
-
-    <% if(locals.user){%>
+<section id="user_friends" class="friends-container">
+    <% if(locals.user) { %>
         <h3>Friends</h3>
-        <% for(u of all_users) {%>
-            <p>
-                <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
-                    <%= u.name %>
-                </a>
-
-
-            </p>
-            <%}%>
-                <%}%>
+        <ul class="friends-list">
+            <% for(u of all_users) { %>
+                <li class="friend">
+                    <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
+                        <%= u.name %>
+                    </a>
+                </li>
+                <% } %>
+        </ul>
+        <% } %>
 </section>
