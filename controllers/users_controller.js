@@ -4,7 +4,7 @@ const User = require('../models/user');
 module.exports.profile = async function (req, res) {
 
     try {
-        const user = await User.findById(req.params.id);
+        let user = await User.findById(req.params.id);
 
         return res.render('user_profile', {
             title: "USER Profile",
@@ -54,14 +54,14 @@ module.exports.signIn = function (req, res) {
 //get the sign up data
 module.exports.create = async function (req, res) {
     try {
-        const user = await User.findOne({ email: req.body.email });
+        let user = await User.findOne({ email: req.body.email });
 
         if (!user) {
             const createdUser = await User.create(req.body);
             return res.redirect('/users/sign_in');
         } else {
             return res.redirect('back');
-        }
+        } 
     } catch (err) {
         console.log('Error:', err);
         // Handle the error and send an appropriate response

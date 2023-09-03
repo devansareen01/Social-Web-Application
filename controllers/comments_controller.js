@@ -1,9 +1,9 @@
 const Comment = require('../models/comment');
 const Post = require('../models/posts');
 
-module.exports.create = async function(req, res) {
+module.exports.create = async function (req, res) {
     try {
-        const post = await Post.findById(req.body.post).exec(); // Use exec() to execute the query
+        let post = await Post.findById(req.body.post).exec(); // Use exec() to execute the query
 
         if (post) {
             const comment = await Comment.create({
@@ -22,9 +22,9 @@ module.exports.create = async function(req, res) {
         res.status(500).send("An error occurred.");
     }
 }
-module.exports.destroy = async function(req, res) {
+module.exports.destroy = async function (req, res) {
     try {
-        const comment = await Comment.findById(req.params.id);
+        let comment = await Comment.findById(req.params.id);
 
         if (!comment) {
             console.log("Comment not found");
@@ -33,7 +33,7 @@ module.exports.destroy = async function(req, res) {
 
         const postId = comment.post;
         await comment.deleteOne();
-        
+
         await Post.findByIdAndUpdate(
             postId,
             { $pull: { comments: req.params.id } }

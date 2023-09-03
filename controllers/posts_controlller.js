@@ -1,8 +1,8 @@
 const Post = require('../models/posts');
 const Comment = require('../models/comment');
-module.exports.create = async function(req, res) {
+module.exports.create = async function (req, res) {
     try {
-        Post.create({
+        await Post.create({
             content: req.body.content,
             user: req.user
         });
@@ -15,9 +15,9 @@ module.exports.create = async function(req, res) {
     }
 }
 
-module.exports.destroy = async function(req, res) {
+module.exports.destroy = async function (req, res) {
     try {
-        const post = await Post.findById(req.params.id);
+        let post = await Post.findById(req.params.id);
 
         if (!post) {
             // Post not found
