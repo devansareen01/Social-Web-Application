@@ -6,23 +6,25 @@
 /* Reset some default styles */
 
 /* Header styles */
-header {
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
-}
 
 /* Navigation bar styles */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    width: 98vw;
+    
 }
 
 .nav-brand h1 {
     font-size: 24px;
     color: #333;
+    align-items: center;
+    height: 100%;margin: 0px;
 }
 
 .nav-items {
@@ -78,6 +80,10 @@ header {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f5f5f5;
+    position: fixed;
+    right: 2vw;
+    width: 20vw;
+    margin-top: 10vh;
 }
 #new-post-form textarea {
     width: 100%;
@@ -160,6 +166,7 @@ header {
 /* Add space around the post container */
 #feed-posts {
     padding: 20px;
+    width: 40vw;
 }
 
 /* Style for post and comment labels */
@@ -243,3 +250,10 @@ header {
 .delete-button:hover {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
+
+.comment_box{
+    width: 50vw;
+    margin-left: 10vw;
+    margin-top: 10vh;
+}
+

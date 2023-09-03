@@ -1,17 +1,23 @@
 
 
 .createCopy {
-  display: none; }
+  display: none; 
+}
 
 body {
-  background-color: #F7F7F7; }
+  background-color: #F7F7F7; 
+}
+
+
 
 .form {
   background-color: white;
   margin:  2vh 10vw 8vh 10vw;
   height: 65vh;
   display: flex;
-  padding: 3vw; }
+  padding: 3vw; 
+
+}
 
 .right {
   display: flex;

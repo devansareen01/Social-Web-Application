@@ -1,32 +1,29 @@
 /* Style for the friend list container */
 .friends-container {
-    background-color: #f0f0f0;
+    background-color: white;
     /* Background color */
     padding: 10px;
     /* Add padding for spacing */
     border-radius: 5px;
     /* Rounded corners */
-    width: 300px;
+    width: 20vw;
     /* Set the width as per your design */
-    float: right;
     /* Float to the right side */
-    margin-left: 20px;
+    /* margin: 20px; */
     /* Add some margin to separate from the main content */
+    position: fixed;
+    right: 2vw;
+    margin-top: 33vh;
 }
 
 /* Style for the Friends heading */
-.friends-container h3 {
-    font-size: 18px;
-    /* Adjust the font size */
-    margin-bottom: 10px;
-    /* Add spacing below the heading */
-}
+
 
 /* Style for the friends list */
 .friends-list {
     list-style-type: none;
     /* Remove bullet points */
-    padding: 0;
+    padding: 10px;
     /* Remove default padding */
 }
 
