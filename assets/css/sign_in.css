@@ -38,14 +38,14 @@ body {
   align-content: center;
   justify-content: center;
   display: flex;
-  font-size: 1.1rem; }
+  font-size: 3vmin; }
 
 .inputbox input {
   border: none;
   height: 10vh;
   width: 100%;
   margin-top: 1vh;
-  font-size: 1.2rem;
+  font-size: 3vmin;
   padding-left: 2vw; }
 
 .inputbox input:hover {
@@ -78,7 +78,8 @@ h1 {
 
 @media (max-width: 750px) {
   .form {
-    height: calc(100vh - 150px); }
+    height: 65vh; 
+  }
   .right {
     width: 100%;
     margin: calc(100vh-50px);
@@ -89,7 +90,7 @@ h1 {
     height: 10vh;
     width: 100%;
     margin-top: 1vh;
-    font-size: 1.2rem; }
+    font-size: 3vmin; }
   .left {
     display: none; }
   .createCopy {
@@ -98,4 +99,4 @@ h1 {
     align-content: center;
     justify-content: center;
     display: flex;
-    font-size: 1.1rem; } }
+    font-size: 3vmin; } }
