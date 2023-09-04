@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 /* Reset some default styles */
 
 /* Header styles */
@@ -10,7 +11,7 @@ header {
     background-color: #f0f0f0;
     padding: 5px 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+
 }
 
 /* Navigation bar styles */
@@ -79,6 +80,7 @@ header {
     border-radius: 5px;
     background-color: #f5f5f5;
 }
+
 #new-post-form textarea {
     width: 100%;
     padding: 10px;
@@ -86,6 +88,7 @@ header {
     border-radius: 5px;
     resize: vertical;
 }
+
 #new-post-form input[type="submit"] {
     background-color: #007bff;
     color: white;
@@ -94,7 +97,9 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
+
 #posts-list-container li {
+    margin-top: 25px;
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -102,12 +107,15 @@ header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 #posts-list-container p {
     margin-bottom: 10px;
 }
+
 #posts-list-container small {
     color: #888;
-}  
+}
+
 .post-comments {
     margin-top: 10px;
     padding: 10px;
@@ -115,6 +123,7 @@ header {
     border-radius: 5px;
     background-color: #f5f5f5;
 }
+
 .post-comments input[type="text"] {
     width: 100%;
     padding: 8px;
@@ -122,6 +131,7 @@ header {
     border-radius: 5px;
     margin-bottom: 5px;
 }
+
 .post-comments input[type="submit"] {
     background-color: #007bff;
     color: white;
@@ -130,6 +140,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .post-comments-list {
     margin-top: 10px;
     padding: 10px;
@@ -138,6 +149,7 @@ header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .post-comments-list ul {
     list-style: none;
     padding: 0;
@@ -151,6 +163,7 @@ header {
 #posts-list-container li:hover {
     background-color: #f0f0f0;
 }
+
 #posts-list-container {
     margin: 0 auto;
     max-width: 600px;
@@ -177,6 +190,7 @@ header {
 .post-comments-list p:hover {
     background-color: #f5f5f5;
 }
+
 #new-post-form textarea,
 .post-comments input[type="text"] {
     width: 100%;
@@ -197,6 +211,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .post-label {
     display: flex;
     align-items: center;
@@ -211,6 +226,7 @@ header {
     font-weight: bold;
     margin-right: 5px;
 }
+
 /* Styling for the delete container */
 .delete-container {
     text-align: right;

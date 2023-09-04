@@ -61,7 +61,7 @@ module.exports.create = async function (req, res) {
             return res.redirect('/users/sign_in');
         } else {
             return res.redirect('back');
-        } 
+        }
     } catch (err) {
         console.log('Error:', err);
         // Handle the error and send an appropriate response
@@ -73,12 +73,16 @@ module.exports.create = async function (req, res) {
 // sign in and create a session for user
 
 module.exports.createSession = function (req, res) {
-
+    req.flash('success', 'Sucessfully logged in');
     return res.redirect('/');
 }
 
 
 module.exports.destroySession = function (req, res) {
+    // Set the flash message before calling req.logout()
+    req.flash('success', 'Successfully logged out');
+    console.log(req.flash('success')); // Check if the flash message is set
+
     req.logout(function (err) {
         if (err) {
             console.error(err);

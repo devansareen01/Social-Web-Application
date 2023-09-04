@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="css/home.css">
 
+
 <section id="feed-posts">
-    <h4>Posts</h4>
+
     <% if (locals.user) { %>
         <form action="/posts/create" id="new-post-form" method="POST">
             <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required="required"></textarea>
@@ -17,9 +18,9 @@
                 </ul>
             </div>
 </section>
+<% if(locals.user) { %>
+    <section id="user_friends" class="friends-container">
 
-<section id="user_friends" class="friends-container">
-    <% if(locals.user) { %>
         <h3>Friends</h3>
         <ul class="friends-list">
             <% for(u of all_users) { %>
@@ -30,5 +31,6 @@
                 </li>
                 <% } %>
         </ul>
-        <% } %>
-</section>
+
+    </section>
+    <% } %>
