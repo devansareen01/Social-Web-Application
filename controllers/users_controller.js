@@ -80,13 +80,14 @@ module.exports.createSession = function (req, res) {
 
 module.exports.destroySession = function (req, res) {
     // Set the flash message before calling req.logout()
-    req.flash('success', 'Successfully logged out');
-    console.log(req.flash('success')); // Check if the flash message is set
+
+    // Check if the flash message is set
 
     req.logout(function (err) {
         if (err) {
             console.error(err);
         }
+        req.flash('success', 'Successfully logged out');
         return res.redirect('/');
     });
 }
