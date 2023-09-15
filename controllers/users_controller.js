@@ -18,15 +18,46 @@ module.exports.profile = async function (req, res) {
 module.exports.update = async function (req, res) {
     if (req.user.id == req.params.id) {
         try {
-            await User.findByIdAndUpdate(req.params.id, req.body);
-            res.redirect('back');
+            let user = await User.findById(req.params.id);
+
+            User.uploadedAvatar(req, res, function (err) {
+                if (err) {
+                    console.log("Error uploading avatar:", err);
+                    req.flash('error', 'Error uploading avatar.');
+                    return res.redirect('back');
+                }
+
+                if (req.file) {
+                    console.log('File uploaded:', req.file);
+                    user.avatar = user.avatarPath + '/' + req.file.filename;
+                }
+
+                // Add more logging statements here to trace the code flow.
+
+                user.name = req.body.name;
+                user.email = req.body.email;
+
+                user.save(function (saveErr) {
+                    if (saveErr) {
+                        console.log("Error saving user:", saveErr);
+                        req.flash('error', 'Error saving user.');
+                        return res.redirect('back');
+                    }
+
+                    console.log('User saved successfully.');
+                    return res.redirect('back');
+                });
+            });
+
         } catch (error) {
-            console.log(error);
+            req.flash('error', error);
             res.redirect('back');
         }
     } else {
+        req.flash('error', "Unautorized!");
         return res.status(401).send('Unauthorized');
     }
+
 }
 
 //render sign in page
