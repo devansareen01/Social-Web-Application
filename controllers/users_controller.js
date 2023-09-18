@@ -1,6 +1,7 @@
 const { model } = require('mongoose');
 const User = require('../models/user');
-
+const fs = require('fs');
+const path = require('path');
 module.exports.profile = async function (req, res) {
 
     try {
@@ -26,27 +27,19 @@ module.exports.update = async function (req, res) {
                     req.flash('error', 'Error uploading avatar.');
                     return res.redirect('back');
                 }
-
-                if (req.file) {
-                    console.log('File uploaded:', req.file);
-                    user.avatar = user.avatarPath + '/' + req.file.filename;
-                }
-
-                // Add more logging statements here to trace the code flow.
-
                 user.name = req.body.name;
                 user.email = req.body.email;
+                if (req.file) {
 
-                user.save(function (saveErr) {
-                    if (saveErr) {
-                        console.log("Error saving user:", saveErr);
-                        req.flash('error', 'Error saving user.');
-                        return res.redirect('back');
-                    }
+                    // if (user.avatar) {
+                    //     fs.unlinkSync(path.join(__dirname, '..', user.avatar));
+                    // }
+                    // this is saving the path of the uploaded file in the avtar field in the user in mongodb
+                    user.avatar = User.avatarPath + '/' + req.file.filename;
 
-                    console.log('User saved successfully.');
-                    return res.redirect('back');
-                });
+                }
+                user.save();
+                return res.redirect('back');
             });
 
         } catch (error) {

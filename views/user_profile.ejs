@@ -1,6 +1,10 @@
 <body>
 
-    <h1>Profile Page</h1>
+    <link rel="stylesheet" href="/css/profile.css">
+
+    <img src="<%= user.avatar%>" alt="<%= user.name%>" width="100">
+
+
     <% if(user.id==profile_user.id){%>
         <form action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data" method="post">
             <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required>

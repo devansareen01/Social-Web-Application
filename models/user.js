@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
 
-const AVATAR_PATH = path.join('/Upload/users/avatar');
+const AVATAR_PATH = path.join('/upload/users/avatar');
 const userSchema = mongoose.Schema({
     email: {
         type: String,
@@ -30,7 +30,8 @@ let storage = multer.diskStorage({
 
     },
     filename: function (req, file, callBack) {
-        callBack(file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        callBack(null, file.fieldname + '-' + Date.now());
+
     }
 
 });
