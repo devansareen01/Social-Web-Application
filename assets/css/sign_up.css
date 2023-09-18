@@ -1,35 +1,42 @@
 * {
   margin: 0px;
   padding: 0px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 
 body {
-  background-color: #F7F7F7; }
+  background-color: #F7F7F7;
+}
 
 .createCopy {
-  display: none; }
+  display: none;
+}
 
 .form {
   background-color: white;
   margin: 2vh 10vw 0vh 10vw;
   height: calc(100vh-100px);
   display: flex;
-  padding: 2vw; }
+  padding: 2vw;
+}
 
 .left {
   margin-top: 50px;
   width: 50%;
   align-content: center;
-  margin-right: 10px; }
+  margin-right: 10px;
+}
 
 .right {
   display: flex;
   flex-direction: column;
-  width: 50%; }
+  width: 50%;
+}
 
 .left img {
   height: 25vmax;
-  margin-left: 5vw; }
+  margin-left: 5vw;
+}
 
 .inputbox input {
   border: none;
@@ -37,18 +44,22 @@ body {
   width: 100%;
   margin-top: 1vh;
   font-size: 1.2rem;
-  padding-left: 2vw; }
+  padding-left: 2vw;
+}
 
 .inputbox input:hover {
-  border: grey solid 2px; }
+  border: grey solid 2px;
+}
 
 .inputbox {
   margin-bottom: 30px;
-  width: 80%; }
+  width: 80%;
+}
 
 h1 {
   font-weight: 900;
-  margin-bottom: 6vh; }
+  margin-bottom: 6vh;
+}
 
 .create {
   text-decoration: none;
@@ -56,13 +67,15 @@ h1 {
   justify-content: center;
   display: flex;
   font-size: 1.1rem;
-  margin-top: 6vh; }
+  margin-top: 6vh;
+}
 
 .loginBtn input {
   background-color: #007AFF;
   border: none;
   color: white;
-  height: 5vh; }
+  height: 5vh;
+}
 
 .loginBtn {
   background-color: #007AFF;
@@ -73,24 +86,33 @@ h1 {
   width: 28vw;
   margin-top: 0px;
   margin-bottom: 0px;
-  margin: auto; }
+  margin: auto;
+}
 
 @media (max-width: 750px) {
   .form {
-    height: calc(100vh - 85px); }
+    height: calc(100vh - 85px);
+  }
+
   .right {
     width: 100%;
     margin: calc(100vh-50px);
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+  }
+
   .inputbox input {
     border: none;
     height: 7vh;
     width: 100%;
     margin-top: 1vh;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+  }
+
   .left {
-    display: none; }
+    display: none;
+  }
+
   .createCopy {
     display: block;
     text-decoration: none;
@@ -98,4 +120,6 @@ h1 {
     justify-content: center;
     display: flex;
     font-size: 1.1rem;
-    margin-bottom: 20px; } }
+    margin-bottom: 20px;
+  }
+}

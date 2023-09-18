@@ -7,15 +7,12 @@
 /* Reset some default styles */
 
 /* Header styles */
-<<<<<<< HEAD
 header {
     background-color: #f0f0f0;
     padding: 5px 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 }
-=======
->>>>>>> c7fc12f3d79d1077d3c3efd1560ddc5037ba5390
 
 /* Navigation bar styles */
 .navbar {

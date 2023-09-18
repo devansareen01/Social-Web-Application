@@ -1,60 +1,54 @@
 <link rel="stylesheet" href="css/home.css">
 
-<<<<<<< HEAD
 
 <section id="feed-posts">
 
-=======
-<section id="user_friends" class="friends-container">
-    <% if(locals.user) { %>
-        <h1>Friends</h1>
-        <ul class="friends-list">
-            <% for(u of all_users) { %>
-                <li class="friend">
-                    <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
-                        <%= u.name %>
-                    </a>
-                </li>
-                <% } %>
-        </ul>
-        <% } %>
-</section>
-
-<section id="feed-posts">
-    
->>>>>>> c7fc12f3d79d1077d3c3efd1560ddc5037ba5390
-    <% if (locals.user) { %>
-        <form action="/posts/create" id="new-post-form" method="POST">
-            <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required="required"></textarea>
-            <input type="submit" value="Post">
-        </form>
-        <% } %>
-
-            <div id="posts-list-container">
-                <ul>
-                    <% for (post of posts) { %>
-                        <%-include('_post')-%>
-                            <% } %>
-                </ul>
-            </div>
-</section>
-<% if(locals.user) { %>
     <section id="user_friends" class="friends-container">
-
-<<<<<<< HEAD
-        <h3>Friends</h3>
-        <ul class="friends-list">
-            <% for(u of all_users) { %>
-                <li class="friend">
-                    <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
-                        <%= u.name %>
-                    </a>
-                </li>
-                <% } %>
-        </ul>
-
+        <% if(locals.user) { %>
+            <h1>Friends</h1>
+            <ul class="friends-list">
+                <% for(u of all_users) { %>
+                    <li class="friend">
+                        <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
+                            <%= u.name %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+            <% } %>
     </section>
-    <% } %>
-        <script src="/js/home_posts.js"></script>
-=======
->>>>>>> c7fc12f3d79d1077d3c3efd1560ddc5037ba5390
+
+    <section id="feed-posts">
+
+        <% if (locals.user) { %>
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required="required"></textarea>
+                <input type="submit" value="Post">
+            </form>
+            <% } %>
+
+                <div id="posts-list-container">
+                    <ul>
+                        <% for (post of posts) { %>
+                            <%-include('_post')-%>
+                                <% } %>
+                    </ul>
+                </div>
+    </section>
+    <% if(locals.user) { %>
+        <section id="user_friends" class="friends-container">
+
+            <h3>Friends</h3>
+            <ul class="friends-list">
+                <% for(u of all_users) { %>
+                    <li class="friend">
+                        <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
+                            <%= u.name %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+
+        </section>
+        <% } %>
+            <script src="/js/home_posts.js"></script>
