@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 <li id="post-<%= post._id%>">
+=======
+<li class="comment_box">
+    <h1>
+        <%= post.user.name %>
+    </h1>
+>>>>>>> c7fc12f3d79d1077d3c3efd1560ddc5037ba5390
     <div class="post-label">Post</div>
     <p>
+        
         <% if (locals.user && locals.user.id==post.user.id) { %>
+            
             <div class="delete-container">
                 <small>
                     <button class="delete-button"><a href="/posts/destroy/<%= post.id %>">Delete</a></button>
@@ -11,9 +20,7 @@
 
                 <%= post.content %>
                     <br>
-                    <small>
-                        <%= post.user.name %>
-                    </small>
+                    
     </p>
     <div class="post-comments">
         <% if (locals.user) { %>
