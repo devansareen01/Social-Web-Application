@@ -1,12 +1,19 @@
-/* Profile Image */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .profile-image {
     text-align: center;
     margin-bottom: 20px;
 }
 
 .profile-image img {
-    width: 100px;
-    height: 100px;
+    width: 50vh;
+    padding: 2vh;
+    height: 50vh;
+    margin-top: 10vh;
     border-radius: 50%;
 }
 

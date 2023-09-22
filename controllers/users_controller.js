@@ -2,6 +2,7 @@ const { model } = require('mongoose');
 const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
+const { error } = require('console');
 module.exports.profile = async function (req, res) {
 
     try {
@@ -84,7 +85,8 @@ module.exports.create = async function (req, res) {
             const createdUser = await User.create(req.body);
             return res.redirect('/users/sign_in');
         } else {
-            return res.redirect('back');
+            req.flash('error', 'User Already Exists');
+            return res.redirect('/users/sign_in');
         }
     } catch (err) {
         console.log('Error:', err);
