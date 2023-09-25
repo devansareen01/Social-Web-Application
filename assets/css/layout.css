@@ -1,88 +1,3 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-/* Reset some default styles */
-
-/* Header styles */
-header {
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-}
-
-/* Navigation bar styles */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f0f0f0;
-    padding: 10px;
-
-    width: 98vw;
-
-}
-
-.nav-brand h1 {
-    font-size: 24px;
-    color: #333;
-    align-items: center;
-    height: 100%;
-    margin: 0px;
-}
-
-.nav-items {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-item {
-    margin: 0;
-}
-
-/* Common button styles */
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Sign Out button */
-.sign-out {
-    background-color: #ff6347;
-    /* Adjust to your desired color */
-    color: white;
-}
-
-.sign-out:hover {
-    background-color: #d14830;
-    /* Darker shade on hover */
-}
-
-/* Sign In and Sign Up buttons */
-.sign-up,
-.sign-in {
-    background-color: #3498db;
-    /* Adjust to your desired color */
-    color: white;
-}
-
-.sign-up:hover,
-.sign-in:hover {
-    background-color: #2980b9;
-    /* Darker shade on hover */
-}
-
 #new-post-form {
     margin-bottom: 20px;
     padding: 10px;
@@ -173,7 +88,7 @@ header {
     margin-bottom: 10px;
 }
 
-/* Optional: Style for hover effect */
+
 #posts-list-container li:hover {
     background-color: #f0f0f0;
 }
@@ -181,16 +96,15 @@ header {
 #posts-list-container {
     margin: 0 auto;
     max-width: 600px;
-    /* Adjust the width as needed */
 }
 
-/* Add space around the post container */
+
 #feed-posts {
     padding: 20px;
     width: 40vw;
 }
 
-/* Style for post and comment labels */
+
 .post-label,
 .comment-label {
     background-color: #007bff;
@@ -201,7 +115,7 @@ header {
     margin-bottom: 10px;
 }
 
-/* Optional: Style for hover effect on comments */
+
 .post-comments-list p:hover {
     background-color: #f5f5f5;
 }
@@ -214,7 +128,6 @@ header {
     border-radius: 5px;
     resize: vertical;
     box-sizing: border-box;
-    /* Add this to include padding and border in width calculation */
 }
 
 #new-post-form input[type="submit"],
@@ -242,20 +155,16 @@ header {
     margin-right: 5px;
 }
 
-/* Styling for the delete container */
+
 .delete-container {
     text-align: right;
-    /* Align the delete button to the right */
     margin-top: 10px;
-    /* Add some spacing between the delete button and the post content */
 }
 
-/* Styling for the delete button */
+
 .delete-button {
     background-color: white;
-    /* Red background color */
     color: #fff;
-    /* White text color */
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
@@ -264,13 +173,13 @@ header {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* Hover effect */
+
 .delete-button:hover {
     background-color: #ff3333;
-    /* Darker red on hover */
+
 }
 
-/* Optional: Add a subtle shadow on hover for depth */
+
 .delete-button:hover {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }

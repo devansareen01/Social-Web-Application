@@ -10,6 +10,7 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
+const passportJWT = require('./config/passort-jwt');
 const MongoStore = require('connect-mongo');
 
 
