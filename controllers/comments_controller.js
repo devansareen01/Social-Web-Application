@@ -1,6 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/posts');
-
+const commentMailer = require('../config/mailers/comments_mailer');
 module.exports.create = async function (req, res) {
     try {
         let post = await Post.findById(req.body.post).exec(); // Use exec() to execute the query
@@ -9,12 +9,12 @@ module.exports.create = async function (req, res) {
             const comment = await Comment.create({
                 content: req.body.content,
                 post: req.body.post,
-                user: req.user._id
+                user: req.user
             });
 
             post.comments.push(comment);
             await post.save();
-
+            commentMailer.newCommment(comment);// send the mail to user every time post get commented
             res.redirect('/');
         }
     } catch (error) {
