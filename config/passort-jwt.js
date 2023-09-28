@@ -5,7 +5,7 @@ const extractJWt = require('passport-jwt').ExtractJwt;// help us extract jwt fro
 const User = require('../models/user');
 
 let opts = {
-    jwtFromRequest: extractJWt.fromAuthHeaderAsBearerToken,
+    jwtFromRequest: extractJWt.fromAuthHeaderAsBearerToken(),
     secretOrKey: "VartaChat"
 }
 
