@@ -5,9 +5,9 @@
     </h1>
     <div class="post-label">Post</div>
     <p>
-        
+
         <% if (locals.user && locals.user.id==post.user.id) { %>
-            
+
             <div class="delete-container">
                 <small>
                     <button class="delete-button"><a href="/posts/destroy/<%= post.id %>">Delete</a></button>
@@ -17,7 +17,7 @@
 
                 <%= post.content %>
                     <br>
-                    
+
     </p>
     <div class="post-comments">
         <% if (locals.user) { %>
