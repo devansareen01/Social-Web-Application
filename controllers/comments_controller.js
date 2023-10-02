@@ -3,8 +3,8 @@ const Post = require('../models/posts');
 
 const commentMailer = require('../config/mailers/comments_mailer');
 
-const queue = require('../config/kue');
-const commentEmailWorker = require('../workers/comment_email_worker');
+
+
 
 module.exports.create = async function (req, res) {
     try {
@@ -20,18 +20,10 @@ module.exports.create = async function (req, res) {
             post.comments.push(comment);
             await post.save();
 
-            // commentMailer.newCommment(comment);
+            commentMailer.newCommment(comment);
             // send the mail to user every time post get commented
 
-            let job = queue.create('emails', comment).save(function (err) {
-                if (err) {
-                    console.log('error in sending in the queue', err)
-                    return;
-                }
 
-                console.log('job enqueued', job.id);
-
-            });
             res.redirect('/');
         }
     } catch (error) {

@@ -1,7 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const app = express();
-const port = 8181;
+const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 
 const db = require('./config/mongoose');
@@ -11,6 +11,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local');
 const passportJWT = require('./config/passort-jwt');
+const passortGoogle = require('./config/passport-google-oauth2');
 const MongoStore = require('connect-mongo');
 
 
@@ -44,7 +45,7 @@ app.set('layout extractScripts', true);
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
+app.use(express.json());
 // mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'VARTACHAT',

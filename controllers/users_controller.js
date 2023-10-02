@@ -3,6 +3,7 @@ const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
 const { error } = require('console');
+
 module.exports.profile = async function (req, res) {
 
     try {
@@ -99,6 +100,7 @@ module.exports.create = async function (req, res) {
 // sign in and create a session for user
 
 module.exports.createSession = function (req, res) {
+    console.log(req);
     req.flash('success', 'Sucessfully logged in');
     return res.redirect('/');
 }
