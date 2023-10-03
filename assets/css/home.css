@@ -1,86 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-* {
+*{
     font-family: 'Times New Roman', Times, serif;
 }
-
-/* Style for the friend list container */
 .friends-container {
-    background-color: white;
-    /* Background color */
-    padding: 10px;
-    /* Add padding for spacing */
     border-radius: 5px;
-    /* Rounded corners */
     width: 20vw;
-    /* Set the width as per your design */
-    /* Float to the right side */
-    /* margin: 20px; */
-    /* Add some margin to separate from the main content */
     position: absolute;
     right: 2vw;
     margin-top: 33vh;
+    color: white
 }
-
-/* Style for the Friends heading */
-
-
-/* Style for the friends list */
 .friends-list {
     list-style-type: none;
-    /* Remove bullet points */
     padding: 10px;
-    /* Remove default padding */
 }
-
-/* Style for each friend item */
 .friend {
     margin-bottom: 5px;
-    /* Add spacing between friend items */
 }
-
-/* Style for friend links */
 .friend a {
     text-decoration: none;
-    /* Remove underlines */
-    color: #333;
-    /* Text color */
+    color: black;
     font-weight: bold;
-    /* Make the text bold */
     transition: color 0.3s;
-    /* Add a smooth color transition */
 }
-
-/* Hover effect for friend links */
 .friend a:hover {
     color: #007bff;
-    /* Change text color on hover */
 }
 
 .friend_block {
-
     border: none;
     height: 1vh;
     width: 15vw;
     padding: 2vh;
     display: flex;
     align-items: center;
-    margin: 1vh;
+    margin: 3vh 3vh 3vh 1vh;
     justify-content: left;
+}
 
-
+.friend_block a{
+    color: white;
 }
 
 .friend_block img {
-    height: 8vh;
-    width: 8vh;
+    height: 7vh;
+    width: 7vh;
     border-radius: 50%;
     position: absolute;
     left: 0vh;
-
-
 }
 
 .friend_block a {
     margin-left: 3vw;
+    text-decoration: none;
 }
+
+.LaunchChatPageButton i{
+    font-size: 3rem;
+    position: fixed;
+    right: 5vw;
+    bottom: 10vh;
+}
+
+.home-container{
+    background-color: #84a4e9;
+}   

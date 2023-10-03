@@ -1,7 +1,7 @@
-* {
+*{
     margin: 0px;
     padding: 0px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman';
 }
 
 .navbar {
@@ -9,14 +9,14 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    background-color: #f0f0f0;
+    background-color: white;
     padding: 10px;
-    width: 98vw;
+    width: 100vw;
+    z-index: 2;
 }
 
 .nav-brand h1 {
     font-size: 24px;
-    color: #333;
     align-items: center;
     height: 100%;
     margin: 0px;
@@ -29,15 +29,16 @@
     text-decoration: none;
 }
 
+
 .nav-item {
     list-style: none;
     display: flex;
     align-items: center;
+    margin-right: 3vw;
 }
 
 .user-name a {
     text-decoration: none;
-    color: black;
 }
 
 .nav-item img {
@@ -78,4 +79,9 @@
 .sign-up:hover,
 .sign-in:hover {
     background-color: #2980b9;
+    color: white;
+}
+.nav-item a{
+    text-decoration: none;
+    color: black;
 }

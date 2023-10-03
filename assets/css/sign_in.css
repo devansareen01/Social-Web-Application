@@ -8,25 +8,25 @@
   display: none;
 }
 
-body {
-  background-color: #F7F7F7;
+
+body{
+  background-color: #edf7fd;
 }
 
-
-
 .form {
-  background-color: white;
   margin: 2vh 10vw 8vh 10vw;
   height: 65vh;
   display: flex;
   padding: 3vw;
-
+  box-shadow: 0px 0px 20px black;
 }
 
 .right {
   display: flex;
   flex-direction: column;
   width: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .left {
@@ -55,6 +55,7 @@ body {
   margin-top: 1vh;
   font-size: 3vmin;
   padding-left: 2vw;
+  color: black;
 }
 
 .inputbox input:hover {
@@ -71,23 +72,22 @@ h1 {
   margin-bottom: 6vh;
 }
 
-.loginBtn input {
-  background-color: #007AFF;
-  border: none;
-  color: white;
-  height: 7vh;
-}
-
-.loginBtn {
+.loginBtn{
   background-color: #007AFF;
   display: flex;
   align-content: center;
   justify-content: center;
   border-radius: 3px;
   width: 28vw;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  height: 5vh;
   margin: auto;
+  font-size: 3vmin;
+}
+
+.loginBtn button{
+  background-color: #007AFF;
+  color: white;
+  font-size: 2vmin;
 }
 
 @media (max-width: 750px) {

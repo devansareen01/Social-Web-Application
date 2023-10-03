@@ -6,20 +6,21 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-body {
-  background-color: #F7F7F7;
-}
 
 .createCopy {
   display: none;
 }
 
+body{
+  background-color: #edf7fd;
+}
+
 .form {
-  background-color: white;
   margin: 2vh 10vw 0vh 10vw;
   height: calc(100vh-100px);
   display: flex;
   padding: 2vw;
+  box-shadow: 0px 0px 20px black;
 }
 
 .left {
@@ -33,6 +34,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .left img {
@@ -47,6 +50,7 @@ body {
   margin-top: 1vh;
   font-size: 1.2rem;
   padding-left: 2vw;
+  color: black;
 }
 
 .inputbox input:hover {
@@ -89,6 +93,8 @@ h1 {
   margin-top: 0px;
   margin-bottom: 0px;
   margin: auto;
+  color: white;
+  font-size: 2vmin;
 }
 
 @media (max-width: 750px) {

@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Times New Roman', Times, serif;
+    background-color: #101010;
 }
 
 .profile-image {
@@ -55,8 +56,3 @@
 }
 
 /* User Name and Email */
-.user-name,
-.user-email {
-    font-size: 24px;
-    margin-bottom: 10px;
-}

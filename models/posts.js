@@ -22,5 +22,11 @@ const postSchema = new mongoose.Schema({
     timestamps: true
 });
 
+// let commentButton = global.querySelector(".comment-button");
+// commentButton.addEventListener("click",()=>{
+
+// });
+
+
 const Post = mongoose.model('Post', postSchema);
 module.exports = Post;
