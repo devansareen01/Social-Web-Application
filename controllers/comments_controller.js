@@ -2,7 +2,7 @@ const Comment = require('../models/comment');
 const Post = require('../models/posts');
 
 const commentMailer = require('../config/mailers/comments_mailer');
-
+const Like = require('../models/like');
 
 
 
@@ -47,6 +47,7 @@ module.exports.destroy = async function (req, res) {
             postId,
             { $pull: { comments: req.params.id } }
         );
+        await Like.deleteMany({ likeable: comment._id, onModel: 'Comment' });
 
         return res.redirect('back');
     } catch (error) {

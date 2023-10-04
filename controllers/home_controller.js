@@ -10,8 +10,11 @@ module.exports.home = async function (req, res) {
 
                 populate: {
                     path: 'user' // Populate the 'user' field of each comment
+                },
+                populate: {
+                    path: 'likes'
                 }
-            })
+            }).populate('likes');
 
 
 
