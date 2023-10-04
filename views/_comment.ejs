@@ -1,27 +1,27 @@
 <div >
     <li>
-        <div class="comment-wrapper">
-            
-                <!-- <% if (locals.user && post._id == comment.post.id) { %>
-                    <div class="delete-container">
-                        <small>
-                            <button class="delete-button"><a href="/comments/destroy/<%= comment.id %>">Delete</a></button>
-                        </small>
-                    </div>
-                <% } %> -->
-                
-                <div>
-                    <%= comment.user.name %>:
-                    <%= comment.content %>
-                </div>
+        <div class="comment-wrapper" >
+            <p>
                 <% if (locals.user && locals.user.id==comment.user.id) { %>
                     <div class="delete-container">
                         <small>
-                            <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a></button>
+                            <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i
+                                        class="fa-solid fa-trash" style="color: #edeff2;"></i></a></button>
                         </small>
                     </div>
-                <% } %>
+                    <% } %>
+                        <% if (locals.user && post._id==comment.post.id) { %>
+                            <div class="delete-container">
+                                <small>
+                                    <button class="delete-button"><a
+                                            href="/comments/destroy/<%= comment.id %>">Delete</a></button>
+                                </small>
+                            </div>
+                            <% } %>
+                                <%= comment.user.name %>:
+                                    <%= comment.content %>
+            </p>
         </div>
+        
     </li>
 </div>
-
