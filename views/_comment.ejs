@@ -1,13 +1,7 @@
-<div class="comment-section">
+<div >
     <li>
-        <p>
-            <% if (locals.user && locals.user.id==comment.user.id) { %>
-                <div class="delete-container">
-                    <small>
-                        <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash" style="color: #edeff2;"></i></a></button>
-                    </small>
-                </div>
-                <% } %>
+        <div class="comment-wrapper">
+            
                 <!-- <% if (locals.user && post._id == comment.post.id) { %>
                     <div class="delete-container">
                         <small>
@@ -15,9 +9,19 @@
                         </small>
                     </div>
                 <% } %> -->
-                <%= comment.user.name %>:
-                <%= comment.content %>
-        </p>
+                
+                <div>
+                    <%= comment.user.name %>:
+                    <%= comment.content %>
+                </div>
+                <% if (locals.user && locals.user.id==comment.user.id) { %>
+                    <div class="delete-container">
+                        <small>
+                            <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a></button>
+                        </small>
+                    </div>
+                <% } %>
+        </div>
     </li>
 </div>
 

@@ -1,10 +1,11 @@
 <!-- <li id="post-<%= post._id%>"> -->
 <li class="comment_box">
 
+     
     
     <div class="comment_wrapper">
         <div class="post-image">
-            <img src="<%= post.user.avatar%>" alt="">
+            <img src="<%= post.user.avatar%>" alt="icon">
                 
         </div>
         
@@ -15,7 +16,7 @@
                 </h4>
                 <% if (locals.user && locals.user.id==post.user.id) { %>
                     <small>
-                        <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash" style="color: #edeff2;"></i></a></button>
+                        <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a></button>
                     </small>
                 <% } %>
             </div>
@@ -36,15 +37,15 @@
                     <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
                     <input type="hidden" name="post" value="<%= post._id %>">
                     <button type="submit" class="comment-Button">
-                        <i class="fa-solid fa-paper-plane" ;"></i>
-                    </button>  
+                        <img src="images/Untitled.png" alt="">
+                    </button>
                 </form>
                 <div class="comment-react-nav-bar">
                     <button>
-                        <i class="fa-solid fa-heart" style="color: #c3c6cb;"></i>
+                        <i class="fa-solid fa-thumbs-up"></i>
                     </button>
                     <button onclick="commentbtnClickedHandler()" id="comment-button">
-                        <i class="fa-regular fa-comment" style="color: #d7dadf;"></i>
+                        <i class="fa-regular fa-comment"></i>
                     </button>
                 </div>
                 <% } %>
