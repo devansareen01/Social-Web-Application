@@ -26,7 +26,7 @@
     <section id="feed-posts">
 
         <% if (locals.user) { %>
-            <form action="/posts/create" id="new-post-form" enctype="multipart/form-data" method="post">
+            <form action="/posts/create" id="new-post-form" method="post">
                 <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required="required"></textarea>
                 <input type="submit" value="Post">
             </form>
@@ -44,8 +44,8 @@
     </section>
 
     <script src="/js/home_posts.js"></script>
-    !-- importing this script for creating the comments -->
-    <script src="/js/home_post_comments.js"></script>
+    <!-- !-- importing this script for creating the comments -->
+    <!-- <script src="/js/home_post_comments.js"></script>
     <script src="/js/home_posts.js"></script>
 
 
@@ -55,4 +55,4 @@
             let self = this;
             let toggleLike = new ToggleLike(self);
         });
-    </script>
+    </script> -->

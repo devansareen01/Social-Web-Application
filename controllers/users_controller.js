@@ -3,6 +3,8 @@ const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
 const { error } = require('console');
+const crypto = require('crypto');
+const { renderTemplate } = require('../config/nodemailer');
 
 module.exports.profile = async function (req, res) {
 
@@ -119,3 +121,81 @@ module.exports.destroySession = function (req, res) {
         return res.redirect('/');
     });
 }
+
+
+
+
+
+module.exports.forgetPassword = async function (req, res) {
+    res.render('forgetPassword', {
+        title: "Forget Password"
+    })
+}
+
+module.exports.renderResetPassword = async function (req, res) {
+    try {
+        const { token } = req.query;
+
+        // Find the user by the reset token and check if it's valid (e.g., not expired)
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetTokenExpires: { $gt: Date.now() }
+        });
+
+        if (!user) {
+            // Handle the case where the token is invalid or expired
+            return res.status(400).send('Invalid or expired reset token.');
+        }
+
+        // Render the password reset page with the reset token
+        res.render('resetPassword', {
+            title: 'Reset Password',
+            token: token // Pass the token to the view
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
+module.exports.resetPassword = async function (req, res) {
+    try {
+        const { token } = req.body;
+        const { newPassword } = req.body;
+
+        // Find the user by the reset token and check if it's valid (e.g., not expired)
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetTokenExpires: { $gt: Date.now() }
+        });
+
+        if (!user) {
+            // Handle the case where the token is invalid or expired
+            return res.status(400).send('Invalid or expired reset token.');
+        }
+
+        // Update the user's password with the new password
+        user.password = newPassword;
+
+        // Clear the reset token and reset token expiration
+        user.resetPasswordToken = undefined;
+        user.resetTokenExpires = undefined;
+
+        // Save the updated user object with the new password
+        await user.save();
+
+        // Respond to the user with a success message or redirect to a confirmation page
+        res.render('passwordResetSuccess', {
+            title: 'Password Reset Successful'
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
+
+
+
+
