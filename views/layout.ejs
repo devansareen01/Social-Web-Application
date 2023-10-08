@@ -1,18 +1,12 @@
 <head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <script src="/js/friendship.js"></script> -->
-
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/header.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -20,21 +14,17 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="/js/home_post_comment.js"></script>
     <script src="/js/home_posts.js"></script>
+    <script src="/js/friendship.js"></script>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
 
-
-    <script src="js/toggle_likes.js"></script>
-    <script>
-        $('.toggle-like-button').each(function () {
-            let self = this;
-            let toggleLike = new ToggleLike(self);
-        });
-
-    </script>
 
     <%- style %>
-
+</head>
 
 
 <body>
@@ -51,7 +41,7 @@
 
 
     <script>
-       <% if (flash.success && flash.success.length > 0) {%>
+            <% if (flash.success && flash.success.length > 0) {%>
             new Noty({
                 theme: 'relax',
                 text: '<%=flash.success %>',
@@ -75,15 +65,27 @@
     </script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
-    <script src="/js/chat_engine.js"></script>
 
-    </>
+    <script>
+            $(document).ready(function () {
+                const fromUserId = $('.profile-image').data('from-user-id');
+                const toUserId = $('.profile-image').data('to-user-id');
+
+                // Check the values of fromUserId and toUserId
+
+                let friendshipButton = $('#friendship-button')[0];
+                let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
+            });
+    </script>
+
+    <script src="/js/chat_engine.js"></script>
     <%if(locals.user){%>
         <script>
-                new ChatEngine('chat-container', '<%= locals.user.email %> ');
+            new ChatEngine('chat-container', '<%= locals.user.email %> ');
         </script>
         <%}%>
+
+
 </body>
 
 </html>

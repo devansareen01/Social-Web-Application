@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
-
+const bodyParser = require('body-parser');
 const db = require('./config/mongoose');
 
 //used for session cookes 
@@ -42,7 +42,10 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
+app.use(bodyParser.json());
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
 // use express router
 
 app.set('view engine', 'ejs');
@@ -74,6 +77,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use(flash());
 app.use(customMiddleware.setFlash);
+
 app.use('/', require('./routes'));
 
 

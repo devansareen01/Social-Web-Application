@@ -6,20 +6,39 @@ const { error } = require('console');
 const crypto = require('crypto');
 const { renderTemplate } = require('../config/nodemailer');
 const Friendship = require('../models/friendship');
-module.exports.profile = async function (req, res) {
 
+
+module.exports.profile = async function (req, res) {
     try {
         let user = await User.findById(req.params.id);
 
+        // Assuming user.friends is an array of friend IDs
+
+
+        // Create an empty array to store friend names
+        const friendNames = [];
+
+        // Iterate through the friend IDs and fetch the corresponding names
+        for (const friendId of user.friends) {
+            const friend = await User.findById(friendId);
+            if (friend) {
+                friendNames.push(friend.name); // Assuming 'name' is the field containing friend names
+            }
+        }
+        console.log(friendNames);
+        // Now 'friendNames' array contains the names of user's friends
+
         return res.render('user_profile', {
             title: "USER Profile",
-            profile_user: user
+            profile_user: user,
+            friendNames: friendNames, // Pass the friend names to the template
         });
     } catch (error) {
-        console.log(error);
+        console.log('Error in profile route:', error);
         res.redirect('back');
     }
 }
+
 module.exports.update = async function (req, res) {
     if (req.user.id == req.params.id) {
         try {
@@ -221,16 +240,17 @@ module.exports.addFreind = async (req, res) => {
     try {
         const { fromUserId, toUserId } = req.body;
 
-        //created friendship
+
         await Friendship.create({
             from_user: fromUserId,
             to_user: toUserId,
         });
 
+
         // also have to push in user's fiendship array
 
-        await User.findByIdAndUpdate(fromUserId, { $push: { friends: toUserId } });
 
+        await User.findByIdAndUpdate(fromUserId, { $push: { friends: toUserId } });
         return res.json({ message: 'Friend added successfully' });
     } catch (error) {
         console.error('Error removing friend:', error);
@@ -244,15 +264,15 @@ module.exports.removeFriend = async (req, res) => {
         const { fromUserId, toUserId } = req.body;
 
 
-        //find and delete the friendship
         await Friendship.findOneAndDelete({
-            fromUser: fromUserId,
-            toUser: toUserId,
+            from_user: fromUserId,
+            to_user: toUserId,
         });
 
-        //also pull out from friends array in users
-        await User.findByIdAndUpdate(fromUserId, { $pull: { friends: toUserId } });
 
+        //also pull out from friends array in users
+
+        await User.findByIdAndUpdate(fromUserId, { $pull: { friends: toUserId } });
         res.json({ message: 'Friend removed successfully' });
 
     } catch (error) {

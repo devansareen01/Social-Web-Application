@@ -4,7 +4,7 @@
 
 
 <body>
-    <div class="profile-image">
+    <div class="profile-image" data-from-user-id="<%= locals.user.id %>" data-to-user-id="<%= profile_user.id %>">
         <img src="<%= profile_user.avatar%>" alt="<%= profile_user.name%>" width="100">
     </div>
 
@@ -31,6 +31,19 @@
                 </div>
             </form>
         </div>
+        <div>
+            <h2>Friends:</h2>
+            <!-- Assuming you want to display the friend names in a list -->
+            <ul>
+                <% friendNames.forEach((friendName)=> { %>
+                    <li>
+                        <%= friendName %>
+                    </li>
+                    <% }) %>
+            </ul>
+
+
+        </div>
         <%}else{%>
             <h1 class="user-name">
                 <%= profile_user.name%>
@@ -39,8 +52,10 @@
                 <%= profile_user.email%>
             </h1>
 
-            <button id="friendship-button" onclick="toggleFriendship()">Add Friend</button>
+            <button id="friendship-button"></button>
+
             <%}%>
+
 
 
 </body>

@@ -3,10 +3,25 @@ const Comment = require('../models/comment');
 const Like = require('../models/like');
 module.exports.create = async function (req, res) {
     try {
-        let post = await Post.create({
-            content: req.body.content,
-            user: req.user
-        });
+        await Post.uploadedMedia(req, res, async function (err) {
+
+            if (err) {
+                console.log("Error uploading media:", err);
+                req.flash('error', 'Error uploading media.');
+                return res.redirect('back');
+            }
+            let media = null;
+            if (req.file) {
+                media = Post.mediaPath + '/' + req.file.filename;
+            }
+            let post = await Post.create({
+                content: req.body.content,
+                user: req.user,
+                media: media
+            });
+
+        })
+
         if (req.xhr) {
             return res.status(200).json({
                 data: {
