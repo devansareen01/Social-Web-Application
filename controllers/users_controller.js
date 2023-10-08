@@ -5,7 +5,7 @@ const path = require('path');
 const { error } = require('console');
 const crypto = require('crypto');
 const { renderTemplate } = require('../config/nodemailer');
-
+const Friendship = require('../models/friendship');
 module.exports.profile = async function (req, res) {
 
     try {
@@ -197,5 +197,66 @@ module.exports.resetPassword = async function (req, res) {
 
 
 
+module.exports.checkFriendShip = async (req, res) => {
+    try {
+        const { fromUserId, toUserId } = req.body;
+
+        const existingFriendship = await Friendship.findOne({
+            from_user: fromUserId,
+            to_user: toUserId,
+        });
 
 
+        const isFriend = !!existingFriendship
+
+        return res.json({ isFriend });
+
+    } catch (error) {
+        console.error('Error checking friendship status:', error);
+        res.status(500).json({ error: 'Failed to check friendship status' });
+    }
+}
+
+module.exports.addFreind = async (req, res) => {
+    try {
+        const { fromUserId, toUserId } = req.body;
+
+        //created friendship
+        await Friendship.create({
+            from_user: fromUserId,
+            to_user: toUserId,
+        });
+
+        // also have to push in user's fiendship array
+
+        await User.findByIdAndUpdate(fromUserId, { $push: { friends: toUserId } });
+
+        return res.json({ message: 'Friend added successfully' });
+    } catch (error) {
+        console.error('Error removing friend:', error);
+        res.status(500).json({ error: 'Failed to add friend' });
+    }
+}
+
+
+module.exports.removeFriend = async (req, res) => {
+    try {
+        const { fromUserId, toUserId } = req.body;
+
+
+        //find and delete the friendship
+        await Friendship.findOneAndDelete({
+            fromUser: fromUserId,
+            toUser: toUserId,
+        });
+
+        //also pull out from friends array in users
+        await User.findByIdAndUpdate(fromUserId, { $pull: { friends: toUserId } });
+
+        res.json({ message: 'Friend removed successfully' });
+
+    } catch (error) {
+        console.error('Error removing friend:', error);
+        res.status(500).json({ error: 'Failed to remove friend' });
+    }
+}

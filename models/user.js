@@ -25,7 +25,14 @@ const userSchema = mongoose.Schema({
     },
     resetTokenExpires: {
         type: Date
-    }
+    },
+
+    friends: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Friendship'
+        }
+    ]
 }, {
     timestamps: true
 });

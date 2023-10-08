@@ -39,5 +39,7 @@ router.get('/forgetPassword', userController.forgetPassword);
 router.post('/forgetPassword/initiatePasswordReset', forgetPasswordMailer.initiatePasswordReset);
 router.get('/reset-password', userController.renderResetPassword);
 router.post('/reset-password', userController.resetPassword);
-
+router.post('/check-friendShip', userController.checkFriendShip)
+router.post('/add-friend', userController.addFreind);
+router.post('/remove-friend', userController.removeFriend);
 module.exports = router;

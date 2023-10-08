@@ -30,7 +30,7 @@ module.exports.initiatePasswordReset = async function (req, res) {
             from: 'vartaChat54@gmail.com',
             to: email,
             subject: "Reset Password",
-            html: nodemailer.renderTemplate({ url: resetUrl, additionalData: 'example' }, '/Password/reset_password.ejs')
+            html: nodemailer.renderTemplate({ url: resetUrl }, '/Password/reset_password.ejs')
         }
         await nodemailer.transporter.sendMail(emailData);
         return res.render('passwordResetEmailSent', {

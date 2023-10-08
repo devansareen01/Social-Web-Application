@@ -13,8 +13,10 @@ const passportLocal = require('./config/passport-local');
 const passportJWT = require('./config/passort-jwt');
 const passortGoogle = require('./config/passport-google-oauth2');
 const MongoStore = require('connect-mongo');
-
-
+const chatServer = require('http').createServer(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening to port 5000')
 // const sassMiddleware = require('node-sass-middleware')
 // extract style and scripts from sub pages into the layout
 

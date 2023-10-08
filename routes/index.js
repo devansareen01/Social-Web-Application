@@ -13,7 +13,9 @@ router.use('/posts', require('./posts'));
 router.use('/comments', require('./comments'));
 router.use('/api', require('./api'));
 router.use('/likes', require('./likes'));
-
+router.get('/chatBox', async (req, res) => {
+    return res.render('chat_box')
+})
 
 // for any further routes, access from here
 // router.use('/routerName', require('./routerfile));
