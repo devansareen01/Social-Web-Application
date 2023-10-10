@@ -1,136 +1,128 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
 * {
-  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+  box-sizing: 'border-box';
 }
 
-.createCopy {
-  display: none;
-}
-
-
-body{
-  background-color: #2c4766;
-}
-
-.form {
-  margin: 2vh 10vw 8vh 10vw;
-  height: 65vh;
+.body {
   display: flex;
-  padding: 3vw;
-  box-shadow: 0px 0px 30px white;
+  justify-content: center;
+  align-items: center;
+  background: #1f293a;
+  min-height: 100vh;
 }
 
-.right {
+.container {
+  position: relative;
+  width: 256px;
+  height: 256px;
   display: flex;
-  flex-direction: column;
-  width: 50%;
   justify-content: center;
   align-items: center;
 }
 
-.left {
-  margin-top: 50px;
-  width: 50%;
-  align-content: center;
-  margin-right: 10px;
+.container span {
+  position: relative;
+  left: 0;
+  width: 32px;
+  height: 6px;
+  background: #2c4766;
+  border-radius: 8px;
+  transform-origin: 128px;
+  animation: animationBlink 3s linear infinite;
+  animation-delay: calc(var --i) * (3s/50);
 }
 
-.left img {
-  height: 25vmax;
+@keyframes animateBlank {
+  0% {
+    background: #0ef;
+  }
+
+  25% {
+    background: #2c4766;
+  }
 }
 
-.create {
-  text-decoration: none;
-  align-content: center;
-  justify-content: center;
-  display: flex;
-  font-size: 3vmin;
-  color: white;
+.login-box {
+  position: absolute;
+  width: 400px;
 }
 
-.inputbox input {
-  border: none;
-  height: 10vh;
+.login-box form {
   width: 100%;
-  margin-top: 1vh;
-  font-size: 3vmin;
-  padding-left: 2vw;
-  color: white;
-  background-color: #2c4766;
+  padding: 0 50 px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #0ef
+}
+
+.input-box {
+  position: relative;
+  margin: 25px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #2c4766;
+  outline: none;
+  border-radius: 40px;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 20 px;
+  transition: 0.5s;
+}
+
+.input-box input :focus,
+.input-box input :valid {
+  border-color: #0ef;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: 1px;
+  font-size: 0.8em;
+  background-color: #1f293a;
+  padding: 0 6px;
+  counter-reset: #0ef;
+}
+
+.forget-password a {
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 35px;
 
 }
 
-.inputbox input:hover {
-  border: grey solid 2px;
+.forget-password a:hover {
+  text-decoration: underline;
 }
 
-.inputbox {
-  margin-bottom: 30px;
-  width: 80%;
-}
-
-h1 {
-  font-weight: 900;
-  margin-bottom: 6vh;
-  color: #0ef;
-}
-
-.loginBtn{
-  background-color: #007AFF;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  border-radius: 3px;
-  width: 28vw;
-  height: 5vh;
-  margin: auto;
-  font-size: 3vmin;
-}
-
-.loginBtn button{
-  background-color: #007AFF;
-  color: white;
-  font-size: 2vmin;
-}
-
-::placeholder{
-  color: white;
-}
-.right i{
-  color: white;
-}
-
-@media (max-width: 750px) {
-  .form {
-    height: 65vh;
-  }
-
-  .right {
-    width: 100%;
-    margin: calc(100vh-50px);
-    justify-content: center;
-    align-items: center;
-  }
-
-  .inputbox input {
-    border: none;
-    height: 10vh;
-    width: 100%;
-    margin-top: 1vh;
-    font-size: 3vmin;
-  }
-
-  .left {
-    display: none;
-  }
-
-  .createCopy {
-    display: block;
-    text-decoration: none;
-    align-content: center;
-    justify-content: center;
-    display: flex;
-    font-size: 3vmin;
-  }
+.btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 45px;
+  background-color: #0ef;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: #1f203a;
+  font-weight: 600;
 }

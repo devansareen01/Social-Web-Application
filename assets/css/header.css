@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    background-color: #2c4766;
+    background-color: #0ef;
     padding: 10px;
     width: 100vw;
     z-index: 2;
@@ -71,12 +71,12 @@
 
 .sign-up,
 .sign-in {
-    background-color: #3498db;
+    background-color: #1f293a;
 }
 .nav-item a{
     text-decoration: none;
-    color: white;
+    color: #0ef;
 }
 #appName {
-    color: #0ef;
+    color: #1f293a;
 }
