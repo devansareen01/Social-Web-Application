@@ -216,9 +216,7 @@ posts-list-container li:hover {
     margin-top: 3vh;
 }
 
-.content {
-    padding-top: 10vh;
-}
+
 
 @media (max-width: 750px) {
     .navbar {

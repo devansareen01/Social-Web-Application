@@ -1,40 +1,48 @@
-<!-- _header.ejs -->
+
 <header>
-    <nav class="navbar">
-        <div class="nav-brand">
-            <h1 id="appName">VARTA CHAT</h1>
-        </div>
-
-        <div class="nav-items"> <!-- Change ul to div -->
+    <nav class="navbar navbar-expand-lg custom-navbar-color py-4">
+        <div class="container-fluid">
+          <a class="navbar-brand h1" href="#">VARTACHAT</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 position-absolute end-0 dropdown-menu-dark">
             <% if (locals.user) { %>
-                <div class="nav-item user-name"> <!-- Change li to div -->
-                    <a href="/">
-                        Home
-                    </a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="/users/profile/<%= user.id%>"><img src="<%= user.avatar%>" alt="<%= user.name%>"></a>
-                </div>
-
-                <div class="nav-item user-name">
-                    <a href="/users/profile/<%= user.id%>">
-                        <%= locals.user.name %>
-                    </a>
-                </div>
-
-                <div class="nav-item">
-                    <button class="button sign-out"><a href="/users/sign_out">Sign Out</a></button>
-                </div>
-            <% } else { %>
-                
-                <div class="nav-item">
-                    <button class="button sign-up"><a href="/users/sign_up">Sign Up</a></button>
-                </div>
-                <div class="nav-item">
-                    <button class="button sign-in"><a href="/users/sign_in">Sign In</a></button>
-                </div>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/chatBox">ChatBox</a>
+              </li>
+            <% } %>    
+              <% if (!locals.user) { %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/users/sign_up">Sign Up</a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/users/sign_in">Sign In</a>
+                </li>
+              <% } %>
+            <% if (locals.user) { %>  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/users/profile/<%= user.id%>" role="button" data-bs-toggle="dropdown" >
+                    <img src="<%= user.avatar%>" alt="<%= user.name%>">
+                </a>
+    
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/users/profile/<%= user.id%>"><%= user.name%></a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <% if (locals.user) { %>
+                    <li><a class="dropdown-item" href="/users/sign_out">Sign Out</a></li>        
+                  <% } %>
+                </ul>
+              </li>
             <% } %>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
 </header>
+

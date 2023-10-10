@@ -1,84 +1,23 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Times New Roman';
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    background-color: #0ef;
-    padding: 10px;
-    width: 100vw;
-    z-index: 2;
-}
-
-.nav-brand h1 {
-    font-size: 24px;
-    align-items: center;
-    height: 100%;
-    margin: 0px;
-    color: 0ef;
-}
-
-.nav-items {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-
 .nav-item {
     list-style: none;
     display: flex;
     align-items: center;
     margin-right: 3vw;
+    z-index: 2;
 }
-
-.nav-item a {
-    text-decoration: none;
-    color: #1f293a;
-}
-
 .nav-item img {
     height: 8vh;
     width: 8vh;
     border-radius: 50%;
 }
 
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.sign-out {
-    background-color: #1f293a;
-
-}
-
-.sign-out a {
-    color: #0ef;
-}
-
-.sign-out:hover {}
-
-.sign-up,
-.sign-in {
-    background-color: #1f293a;
-}
-
-.nav-item a {
-    text-decoration: none;
+.navbar a{
     color: #1f293a;
 }
 
-#appName {
-    color: #1f293a;
+.custom-navbar-color {
+    background-color: #0ef;
+} 
+.navbar-brand a{
+    font-size: 30px;
 }

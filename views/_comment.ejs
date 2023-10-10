@@ -3,35 +3,38 @@
         <div class="comment-wrapper">
             <p>
                 <% if (locals.user && locals.user.id==comment.user.id) { %>
-                    <div class="delete-container">
-                        <small>
-                            <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i
-                                        class="fa-solid fa-trash" style="color: #edeff2;"></i></a></button>
-                        </small>
-                    </div>
-                    <% } %>
-                        <% if (locals.user && post._id==comment.post.id) { %>
-                            <div class="delete-container">
-                                <small>
-                                    <button class="delete-button"><a
-                                            href="/comments/destroy/<%= comment.id %>">Delete</a></button>
-                                </small>
-                            </div>
-                            <% } %>
-                                <%= comment.user.name %>:
-                                    <%= comment.content %>
-                                        <small>
-                                            <% if (locals.user){%>
-                                                <a class="toggle-like-button"
-                                                    href="/likes/toggle/?id=<%=comment._id%>&type =Comment"
-                                                    data-likes="<%= comment.likes.length%>">
-                                                    <%= comment.likes.length%>Likes
-                                                </a>
-                                                <%}else{%>
-
-                                                    <%= comment.likes.length%>Likes
-                                                        <%}%>
-                                        </small>
+                <div class="delete-container">
+                    <small>
+                        <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i
+                                    lass="fa-solid fa-trash"
+                                    style="color: #edeff2;"></i></a></button>
+                    </small>
+                </div>
+                <% } %>
+                <% if (locals.user && post._id==comment.post.id) { %>
+                <div class="delete-container">
+                    <small>
+                        <button class="delete-button"><a
+                                href="/comments/destroy/<%= comment.id %>">Delete</a></button>
+                    </small>
+                </div>
+                <% } %>
+                <div>
+                    <%= comment.user.name%>
+                    <%= comment.content %>
+                </div>
+                
+                <small>
+                    <% if (locals.user){%>
+                        <a class="toggle-like-button"
+                            href="/likes/toggle/?id=<%=comment._id%>&type =Comment"
+                            data-likes="<%= comment.likes.length%>">
+                            <%= comment.likes.length%>Likes
+                        </a>
+                    <%}else{%>
+                            <%= comment.likes.length%>Likes
+                    <%}%>
+                </small>
             </p>
         </div>
 

@@ -1,19 +1,16 @@
 <head>
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <link rel="stylesheet" href="/css/layout.css">
     <link rel="stylesheet" href="/css/header.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -50,27 +47,27 @@
 
 
     <script>
-            <% if (flash.success && flash.success.length > 0) {%>
-            new Noty({
-                theme: 'relax',
-                text: '<%=flash.success %>',
-                type: 'success',
-                layout: 'topRight',
-                timeout: 2500
-            }).show();
+        <% if (flash.success && flash.success.length > 0) {%>
+        new Noty({
+            theme: 'relax',
+            text: '<%=flash.success %>',
+            type: 'success',
+            layout: 'topRight',
+            timeout: 2500
+        }).show();
         <%}%>
     </script>
 
     <script>
-           <% if (flash.error && flash.error.length > 0) {%>
-            new Noty({
-                theme: 'relax',
-                text: '<%=flash.error %>',
-                type: 'error',
-                layout: 'topRight',
-                timeout: 2500
-            }).show();
-            <%}%>
+        <% if (flash.error && flash.error.length > 0) {%>
+        new Noty({
+            theme: 'relax',
+            text: '<%=flash.error %>',
+            type: 'error',
+            layout: 'topRight',
+            timeout: 2500
+        }).show();
+        <%}%>
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -79,15 +76,15 @@
 
 
     <script>
-            $(document).ready(function () {
-                const fromUserId = $('.profile-image').data('from-user-id');
-                const toUserId = $('.profile-image').data('to-user-id');
+        $(document).ready(function () {
+            const fromUserId = $('.profile-image').data('from-user-id');
+            const toUserId = $('.profile-image').data('to-user-id');
 
-                // Check the values of fromUserId and toUserId
+            // Check the values of fromUserId and toUserId
 
-                let friendshipButton = $('#friendship-button')[0];
-                let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
-            });
+            let friendshipButton = $('#friendship-button')[0];
+            let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
+        });
     </script>
 
     <script src="/js/chat_engine.js"></script>
@@ -95,7 +92,7 @@
         <script>
             new ChatEngine('chat-container', '<%= locals.user.email %> ');
         </script>
-        <%}%>
+    <%}%>
 
 
 </body>

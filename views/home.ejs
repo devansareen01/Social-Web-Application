@@ -26,19 +26,17 @@
                 <input type="file" name="media" accept="image/*, video/*">
                 <input type="submit" value="Post">
             </form>
-            <div class="LaunchChatPageButton">
-                <a href="/chatBox"><button></button></a><i class="fa-solid fa-comment" style="color: #0a57db;"></i></a>
+        <% } %>
+        
+        <%if(locals.user){%>
+            <div id="posts-list-container">
+                <ul>
+                    <% for (post of posts) { %>
+                        <%-include('_post')-%>
+                    <% } %>
+                </ul>
             </div>
-            <% } %>
-                <%if(locals.user){%>
-                    <div id="posts-list-container">
-                        <ul>
-                            <% for (post of posts) { %>
-                                <%-include('_post')-%>
-                                    <% } %>
-                        </ul>
-                    </div>
-                    <%}%>
+        <%}%>
     </div>
 </div>
 </div>
