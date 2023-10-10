@@ -20,10 +20,6 @@
                             <% } %>
                                 <%= comment.user.name %>:
                                     <%= comment.content %>
-                                        <br>
-                                        <small>
-                                            <%= comment.user.name %>
-                                        </small>
                                         <small>
                                             <% if (locals.user){%>
                                                 <a class="toggle-like-button"
@@ -37,4 +33,7 @@
                                                         <%}%>
                                         </small>
             </p>
+        </div>
+
     </li>
+</div>

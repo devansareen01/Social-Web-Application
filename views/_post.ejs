@@ -39,45 +39,43 @@
                                         <%= post.likes.length%>Likes
                                             <%}%>
                             </small>
-
-                            </p>
-
             </div>
         </div>
+    </div>
 
-        <div>
+    <div>
 
-            <div class="post-comments">
+        <div class="post-comments">
 
-                <% if (locals.user) { %>
-                    <form action="/comments/create" method="POST" class="comment_Section">
-                        <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
-                        <input type="hidden" name="post" value="<%= post._id %>">
-                        <button type="submit" class="comment-Button">
-                            <img src="images/Untitled.png" alt="">
-                        </button>
-                    </form>
-                    <div class="comment-react-nav-bar">
-                        <button>
-                            <i class="fa-solid fa-thumbs-up"></i>
-                        </button>
-                        <button onclick="commentbtnClickedHandler()" id="comment-button">
-                            <i class="fa-regular fa-comment"></i>
-                        </button>
+            <% if (locals.user) { %>
+                <form action="/comments/create" method="POST" class="comment_Section">
+                    <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
+                    <input type="hidden" name="post" value="<%= post._id %>">
+                    <button type="submit" class="comment-Button">
+                        <img src="images/Untitled.png" alt="">
+                    </button>
+                </form>
+                <div class="comment-react-nav-bar">
+                    <button>
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </button>
+                    <button onclick="commentbtnClickedHandler()" id="comment-button">
+                        <i class="fa-regular fa-comment"></i>
+                    </button>
+                </div>
+                <% } %>
+
+                    <div class="post-comments-list">
+                        <div class="comment-label">Comments</div>
+                        <ul id="post-comments-<%= post._id %>">
+                            <% for (comment of post.comments) { %>
+                                <%-include('_comment')-%>
+                                    <% } %>
+                        </ul>
                     </div>
-                    <% } %>
-
-                        <div class="post-comments-list">
-                            <div class="comment-label">Comments</div>
-                            <ul id="post-comments-<%= post._id %>">
-                                <% for (comment of post.comments) { %>
-                                    <%-include('_comment')-%>
-                                        <% } %>
-                            </ul>
-                        </div>
-            </div>
-            <br>
-            <br>
-            <hr>
         </div>
+        <br>
+        <br>
+        <hr>
+    </div>
 </li>

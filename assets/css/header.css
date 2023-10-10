@@ -38,8 +38,9 @@
     margin-right: 3vw;
 }
 
-.user-name a {
+.nav-item a {
     text-decoration: none;
+    color: #1f293a;
 }
 
 .nav-item img {
@@ -58,29 +59,24 @@
 }
 
 .sign-out {
-    background-color: #3498db;
+    background-color: #1f293a;
+
 }
 
-.sign-out a {}
+.sign-out a {
+    color: #0ef;
+}
 
 .sign-out:hover {}
 
 .sign-up,
 .sign-in {
     background-color: #1f293a;
-
-}
-
-.sign-in a,
-.sign-up a {
-    color: #0ef;
-    text-decoration: none;
-
 }
 
 .nav-item a {
     text-decoration: none;
-    color: #0ef;
+    color: #1f293a;
 }
 
 #appName {
