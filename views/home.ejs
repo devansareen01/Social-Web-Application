@@ -1,14 +1,11 @@
 <link rel="stylesheet" href="css/home.css">
-
-
-<section id="feed-posts">
-
-    <section class=" Users-container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" <div>
+<div class="home-container">
+    <div class=" friends-container">
         <% if(locals.user) { %>
             <h1>Friends</h1>
             <ul class="friends-list">
                 <% for(u of all_users) { %>
-
                     <li>
                         <div class="friend_block">
                             <img src="<%= u.avatar%>" alt="<%= u.name%>" width="100">
@@ -16,39 +13,39 @@
                                 <%= u.name %>
                             </a>
                         </div>
-
                     </li>
                     <% } %>
             </ul>
             <% } %>
-    </section>
+                </section>
 
-    <section id="feed-posts">
+                <section id="feed-posts">
 
-        <% if (locals.user) { %>
-            <form action="/posts/create" id="new-post-form" method="post" enctype="multipart/form-data">
-                <textarea name="content" cols="30" rows="3" placeholder="Type Here..." required="required"></textarea>
-                <input type="file" name="media" accept="image/*, video/*">
-                <input type="submit" value="Post">
-            </form>
+                    <% if (locals.user) { %>
+                        <form action="/posts/create" id="new-post-form" method="post" enctype="multipart/form-data">
+                            <textarea name="content" cols="30" rows="3" placeholder="Type Here..."
+                                required="required"></textarea>
+                            <input type="file" name="media" accept="image/*, video/*">
+                            <input type="submit" value="Post">
+                        </form>
 
 
-            <% } %>
-                <%if(locals.user){%>
-                    <div id="posts-list-container">
-                        <ul>
-                            <% for (post of posts) { %>
-                                <%-include('_post')-%>
-                                    <% } %>
-                        </ul>
-                    </div>
-                    <%}%>
-                        <a href="/chatBox"><button>ChatBox</button></a>
-    </section>
+                        <% } %>
+                            <%if(locals.user){%>
+                                <div id="posts-list-container">
+                                    <ul>
+                                        <% for (post of posts) { %>
+                                            <%-include('_post')-%>
+                                                <% } %>
+                                    </ul>
+                                </div>
+                                <%}%>
+                                    <a href="/chatBox"><button>ChatBox</button></a>
+                </section>
 
-    <script src="/js/home_posts.js"></script>
-    <!-- !-- importing this script for creating the comments -->
-    <!-- <script src="/js/home_post_comments.js"></script>
+                <script src="/js/home_posts.js"></script>
+                <!-- !-- importing this script for creating the comments -->
+                <!-- <script src="/js/home_post_comments.js"></script>
     <script src="/js/home_posts.js"></script>
 
 

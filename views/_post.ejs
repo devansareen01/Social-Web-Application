@@ -1,21 +1,28 @@
 <!-- <li id="post-<%= post._id%>"> -->
 <li class="comment_box">
-    <h1>
-        <img src="<%= post.user.avatar%>" alt="<%= post.user.name%>" width="100">
-        <%= post.user.name %>
-    </h1>
-    <div class="post-label">Post</div>
-    <p>
 
-        <% if (locals.user && locals.user.id==post.user.id) { %>
 
-            <div class="delete-container">
-                <small>
-                    <button class="delete-button"><a href="/posts/destroy/<%= post.id %>">Delete</a></button>
-                </small>
+
+    <div class="comment_wrapper">
+        <div class="post-image">
+            <img src="<%= post.user.avatar%>" alt="icon">
+
+        </div>
+
+        <div class="image-right">
+            <div class="row1">
+                <h4>
+                    <%= post.user.name %>
+                </h4>
+                <% if (locals.user && locals.user.id==post.user.id) { %>
+                    <small>
+                        <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i
+                                    class="fa-solid fa-trash"></i></a></button>
+                    </small>
+                    <% } %>
             </div>
-            <% } %>
-
+            <div class="Post_content">
+                <br>
                 <%= post.content %>
                     <%if( post.media !=null){%>
                         <img src="<%= post.media%>" alt="<%= post.user.name%>" width="100">
@@ -33,23 +40,44 @@
                                             <%}%>
                             </small>
 
-    </p>
-    <div class="post-comments">
-        <% if (locals.user) { %>
-            <form action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
-                <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add Comment">
-            </form>
-            <% } %>
+                            </p>
 
-                <div class="post-comments-list">
-                    <div class="comment-label">Comments</div>
-                    <ul id="post-comments-<%= post._id %>">
-                        <% for (comment of post.comments) { %>
-                            <%-include('_comment')-%>
-                                <% } %>
-                    </ul>
-                </div>
-    </div>
+            </div>
+        </div>
+
+        <div>
+
+            <div class="post-comments">
+
+                <% if (locals.user) { %>
+                    <form action="/comments/create" method="POST" class="comment_Section">
+                        <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
+                        <input type="hidden" name="post" value="<%= post._id %>">
+                        <button type="submit" class="comment-Button">
+                            <img src="images/Untitled.png" alt="">
+                        </button>
+                    </form>
+                    <div class="comment-react-nav-bar">
+                        <button>
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </button>
+                        <button onclick="commentbtnClickedHandler()" id="comment-button">
+                            <i class="fa-regular fa-comment"></i>
+                        </button>
+                    </div>
+                    <% } %>
+
+                        <div class="post-comments-list">
+                            <div class="comment-label">Comments</div>
+                            <ul id="post-comments-<%= post._id %>">
+                                <% for (comment of post.comments) { %>
+                                    <%-include('_comment')-%>
+                                        <% } %>
+                            </ul>
+                        </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+        </div>
 </li>

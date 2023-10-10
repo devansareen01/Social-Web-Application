@@ -1,9 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins";
-    box-sizing: 'border-box';
-    background-color: #1f293a;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Times New Roman';
 }
 
 .navbar {
@@ -11,19 +9,18 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    background-color: #1f293a;
-    margin-top: 10px;
-    padding: 1px;
-    width: 98vw;
+    background-color: #0ef;
+    padding: 10px;
+    width: 100vw;
+    z-index: 2;
 }
 
 .nav-brand h1 {
     font-size: 24px;
-    color: #0ef;
     align-items: center;
     height: 100%;
     margin: 0px;
-    margin-left: 5px;
+    color: 0ef;
 }
 
 .nav-items {
@@ -33,15 +30,16 @@
     text-decoration: none;
 }
 
+
 .nav-item {
     list-style: none;
     display: flex;
     align-items: center;
+    margin-right: 3vw;
 }
 
 .user-name a {
     text-decoration: none;
-    color: #0ef;
 }
 
 .nav-item img {
@@ -60,19 +58,12 @@
 }
 
 .sign-out {
-    background-color: #1f293a;
-    ;
-    color: white;
+    background-color: #3498db;
 }
 
-.sign-out a {
-    text-decoration: none;
-    color: #0ef;
-}
+.sign-out a {}
 
-.sign-out:hover {
-    background-color: #2980b9;
-}
+.sign-out:hover {}
 
 .sign-up,
 .sign-in {
@@ -84,9 +75,14 @@
 .sign-up a {
     color: #0ef;
     text-decoration: none;
+
 }
 
-.sign-up:hover,
-.sign-in:hover {
-    background-color: #2980b9;
+.nav-item a {
+    text-decoration: none;
+    color: #0ef;
+}
+
+#appName {
+    color: #1f293a;
 }
