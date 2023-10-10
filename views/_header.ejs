@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar">
         <div class="nav-brand">
-            <h1 id="appName">VARTA CHAT</h1>
+            <h1>VARTA CHAT</h1>
         </div>
 
         <div class="nav-items"> <!-- Change ul to div -->
@@ -26,15 +26,15 @@
                 <div class="nav-item">
                     <button class="button sign-out"><a href="/users/sign_out">Sign Out</a></button>
                 </div>
-            <% } else { %>
-                
-                <div class="nav-item">
-                    <button class="button sign-up"><a href="/users/sign_up">Sign Up</a></button>
-                </div>
-                <div class="nav-item">
-                    <button class="button sign-in"><a href="/users/sign_in">Sign In</a></button>
-                </div>
-            <% } %>
+                <% } else { %>
+
+                    <div class="nav-item">
+                        <button class="button sign-up"><a href="/users/sign_up">Sign Up</a></button>
+                    </div>
+                    <div class="nav-item">
+                        <button class="button sign-in"><a href="/users/sign_in">Sign In</a></button>
+                    </div>
+                    <% } %>
         </div>
     </nav>
 </header>

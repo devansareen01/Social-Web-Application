@@ -20,7 +20,8 @@
     align-items: center;
     height: 100%;
     margin: 0px;
-    color: 0ef;
+    color: #1f293a;
+
 }
 
 .nav-items {
@@ -76,9 +77,5 @@
 
 .nav-item a {
     text-decoration: none;
-    color: #1f293a;
-}
-
-#appName {
     color: #1f293a;
 }
