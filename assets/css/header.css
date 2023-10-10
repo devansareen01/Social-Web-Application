@@ -1,7 +1,9 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    box-sizing: 'border-box';
+    background-color: #1f293a;
 }
 
 .navbar {
@@ -9,17 +11,19 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    background-color: #f0f0f0;
-    padding: 10px;
+    background-color: #1f293a;
+    margin-top: 10px;
+    padding: 1px;
     width: 98vw;
 }
 
 .nav-brand h1 {
     font-size: 24px;
-    color: #333;
+    color: #0ef;
     align-items: center;
     height: 100%;
     margin: 0px;
+    margin-left: 5px;
 }
 
 .nav-items {
@@ -37,7 +41,7 @@
 
 .user-name a {
     text-decoration: none;
-    color: black;
+    color: #0ef;
 }
 
 .nav-item img {
@@ -56,23 +60,30 @@
 }
 
 .sign-out {
-    background-color: #ff6347;
+    background-color: #1f293a;
+    ;
     color: white;
 }
 
 .sign-out a {
     text-decoration: none;
-    color: white;
+    color: #0ef;
 }
 
 .sign-out:hover {
-    background-color: #d14830;
+    background-color: #2980b9;
 }
 
 .sign-up,
 .sign-in {
-    background-color: #3498db;
-    color: white;
+    background-color: #1f293a;
+
+}
+
+.sign-in a,
+.sign-up a {
+    color: #0ef;
+    text-decoration: none;
 }
 
 .sign-up:hover,

@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
 * {
-    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    box-sizing: 'border-box';
+    background-color: #1f293a;
 }
 
 /* Style for the friend list container */
 .Users-container {
-    background-color: white;
+    background-color: #1f293a;
     /* Background color */
     padding: 10px;
     /* Add padding for spacing */
@@ -53,7 +55,7 @@
 
 /* Hover effect for friend links */
 .friend a:hover {
-    color: #007bff;
+    color: #0ef;
     /* Change text color on hover */
 }
 

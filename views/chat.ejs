@@ -1,0 +1,48 @@
+<!-- chat.ejs -->
+<div class="friendsList">
+    <% for (f of allFriends) { %>
+        <div class="avatar">
+            <img src="<%= f.avatar %>" alt="">
+        </div>
+        <div class="username">
+            <h3>
+                <a href="/chat/<%= f.id %>">
+                    <%= f.name %>
+                </a>
+            </h3>
+        </div>
+        <% } %>
+</div>
+
+<div class="chatContainer">
+    <% if (currentUser) { %>
+        <div class="chatHeader">
+            <!-- Display the name and avatar of the current chat partner -->
+            <div class="userDetails">
+                <div class="avatar">
+                    <img src="<%= currentChatPartner.avatar %>" alt="">
+                </div>
+                <div class="username">
+                    <h3>
+                        <%= currentChatPartner.name %>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="chatMessages">
+            <!-- Display chat messages here -->
+            <% for (message of chatMessages) { %>
+                <div class="message">
+                    <p>
+                        <%= message.content %>
+                    </p>
+                </div>
+                <% } %>
+        </div>
+        <div class="input-container">
+            <!-- Input field for typing messages -->
+            <input id="input" type="text" placeholder="Type your message here">
+            <button class="send">Send</button>
+        </div>
+        <% } %>
+</div>

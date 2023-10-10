@@ -1,39 +1,47 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="/css/sign_up.css">
 
+<div class="body">
+    <div class="container">
+        <div class="login-box">
+            <h2>Sign Up</h2>
+            <form action="/users/create" method="Post">
 
-<body>
-    <form action="/users/create" method="Post">
-        <div class="form">
+                <div class="input-box">
+                    <input type="text" name="name" required>
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
 
-            <div class="left">
-                <img src="/images/image2.jpg" alt="">
-                <p class="create"> <a href="auth/google">Sign up with Google</a></p>
-            </div>
-            <div class="right">
-                <h1>Sign up</h1>
-                <div class="inputbox">
-                    <i class="fa-regular fa-user fa-beat"></i>
-                    <input placeholder="Your Name" type="text" required="required" name="name">
                 </div>
-                <div class="inputbox">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input placeholder="Your Email address" type="email" name="email" required="required">
-                </div>
-                <div class="inputbox">
-                    <i class="fa-solid fa-lock"></i>
-                    <input placeholder="Create Password" type="password" name="password" required="'required">
-                </div>
-                <div class="inputbox">
-                    <i class="fa-solid fa-lock"></i>
-                    <input placeholder="ConfirmPassword" type="password" name="ConfirmPassword" required="'required">
-                </div>
+                <div class="input-box">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
 
-                <div class="loginBtn">
-                    <input type="submit" name="submit" value="Create Account">
+                </div>
+                <div class="input-box">
+                    <input type="password" name="ConfirmPassword" required>
+
+                    <label>Confirm Password</label>
+
+                </div>
+                <div class="forget-password">
+                    <a href="auth/google">Sign in with Google</a>
                 </div>
 
-            </div>
+                <button type="submit" class="btn">Sign Up</button>
 
-    </form>
-</body>
+
+            </form>
+
+
+        </div>
+    </div>
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    .
+    .
+    <span style="--i:49;"></span>
+</div>

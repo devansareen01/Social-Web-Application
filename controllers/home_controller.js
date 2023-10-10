@@ -23,7 +23,7 @@ module.exports.home = async function (req, res) {
         return res.render('home', {
             title: "VARTACHAT | HOME",
             posts: posts,
-            all_users: users
+            all_users: users,
         });
     } catch (error) {
         console.log("error", error);

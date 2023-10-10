@@ -42,6 +42,9 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
+
+
+app.use(expressLayouts);
 app.use(bodyParser.json());
 
 

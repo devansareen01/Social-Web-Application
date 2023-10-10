@@ -1,9 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    box-sizing: 'border-box';
+    background-color: #1f293a;
+}
+
 #new-post-form {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: #1f293a;
     position: fixed;
     right: 2vw;
     width: 20vw;
@@ -13,14 +21,14 @@
 #new-post-form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #0ef;
     border-radius: 5px;
     resize: vertical;
 }
 
 #new-post-form input[type="submit"] {
-    background-color: #007bff;
-    color: white;
+    background-color: #1f293a;
+    color: #0ef;
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
@@ -31,9 +39,9 @@
     margin-top: 25px;
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #0ef;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #0ef;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -42,7 +50,7 @@
 }
 
 #posts-list-container small {
-    color: #888;
+    color: #0ef;
 }
 
 .post-comments {
@@ -50,7 +58,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: #1f293a;
 }
 
 .post-comments input[type="text"] {
@@ -62,7 +70,7 @@
 }
 
 .post-comments input[type="submit"] {
-    background-color: #007bff;
+    background-color: #1f293a;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -75,7 +83,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #1f293a;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
