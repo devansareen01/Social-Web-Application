@@ -1,57 +1,61 @@
 <!-- <li id="post-<%= post._id%>"> -->
 <li class="post-box">
     <div class="post-div">
-        <div class="post-image">
-            <img src="<%= post.user.avatar%>" alt="icon">
-
+        <div class="post-header">
+            <div class="post-user-image">
+                <img src="<%= post.user.avatar%>" alt="icon">
+            </div>
+            <h4>
+                <%= post.user.name %>
+            </h4>
+            <% if (locals.user && locals.user.id==post.user.id) { %>
+                <div class="delete-button">
+                    <button>
+                        <a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
+                    </button>
+                </div>
+                <% } %>
         </div>
 
-        <div class="image-right">
+        <!-- <div class="image-right">
             <div class="row1">
-                <h4>
-                    <%= post.user.name %>
-                </h4>
-                <% if (locals.user && locals.user.id==post.user.id) { %>
-                    <small>
-                        <button class="delete-button">
-                            <a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
-                        </button>
-                    </small>
-                    <% } %>
+
+
             </div>
-            <div class="Post_content">
+        </div> -->
+        <div class="Post_content">
 
 
 
-                <%if( post.media !=null){%>
-                    <img class="post-image image-fluid" src="<%= post.media%>" alt="<%= post.user.name%>" width="100">
-                    <%}%>
-                        <br>
-                        <%= post.content %>
+            <%if( post.media !=null){%>
+                <img class="post-image image-fluid" src="<%= post.media%>" alt="<%= post.user.name%>" width="100">
+                <%}%>
+                    <br>
+                    <%= post.content %>
 
-                            <small>
-                                <% if (locals.user){%>
+                        <small>
+                            <!-- <% if (locals.user){%>
                                     <a class="toggle-like-button" href="/likes/toggle/?id=<%=post._id%>&type=Post"
                                         data-likes="<%= post.likes.length%>">
                                         <%= post.likes.length%>Likes
                                     </a>
                                     <%}else{%>
                                         <%= post.likes.length%>Likes
-                                            <%}%>
+                                            <%}%> -->
 
-                                                <div class="comment-react-nav-bar">
-                                                    <button>
-                                                        <i class="fa-solid fa-thumbs-up"></i>
-                                                    </button>
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal<%= post.id %>">
-                                                        <i class="fa-regular fa-comment"></i>
-                                                    </button>
-                                                </div>
-                            </small>
+                            <div class="comment-react-nav-bar">
+                                <button>
+                                    <i class="fa-solid fa-thumbs-up"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal<%= post.id %>">
+                                    <i class="fa-regular fa-comment"></i>
+                                </button>
+                            </div>
+                        </small>
 
-            </div>
         </div>
+
     </div>
 </li>
 <!-- Modal -->

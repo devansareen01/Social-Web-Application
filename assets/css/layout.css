@@ -11,8 +11,10 @@ i {
     padding: 10px;
     border-radius: 5px;
     position: fixed;
-    right: 2vw;
-    width: 20vw;
+    right: 3vw;
+    height: 60vh;
+    width: 25vw;
+    background-color: #00cce1;
     margin-top: 4vh;
     box-shadow: 0px 0px 5px white;
 }
@@ -37,7 +39,7 @@ i {
     margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #7587ee;
+    background-color: #00cce1;
     box-shadow: 0 2px 10px;
 }
 
@@ -186,21 +188,17 @@ posts-list-container li:hover {
 }
 
 
-.delete-container {
-    text-align: right;
-    margin-top: 10px;
+.delete-button {
+    display: grid;
+    justify-content: right;
 }
 
-.delete-button {
-    position: relative;
-    margin-left: 37vw;
-}
+
 
 .delete-button i {
     cursor: pointer;
     font-size: 20px;
-    color: #c1d5e0;
-    background-color: #7587ee;
+    color: red;
 }
 
 
@@ -224,7 +222,7 @@ posts-list-container li:hover {
     }
 }
 
-.post-image img {
+.post-user-image img {
     height: 60px;
     width: 60px;
     margin-right: 1vw;
@@ -253,16 +251,16 @@ posts-list-container li:hover {
     flex-direction: row;
 }
 
-.image-right {
+/* .image-right {
     display: flex;
     flex-direction: column;
-}
+} */
 
-.row1 {
+/* .row1 {
     display: flex;
     flex-direction: row;
     font-size: 1.2rem;
-}
+} */
 
 .users-comment {
     margin-left: 8vw;
@@ -307,10 +305,31 @@ element.style {
 }
 
 .Post_content {
-    color: white;
+    color: #1f293a;
     font-size: 1.2rem;
 }
 
 .container-fluid {
     position: fixed;
+}
+
+.main_body {
+    background-color: #1f293a;
+}
+
+.post-image {
+    height: 300px;
+    width: 500px;
+    margin-left: 20px;
+}
+
+.post-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post-header h4 {
+    color: #1f293a;
+
 }

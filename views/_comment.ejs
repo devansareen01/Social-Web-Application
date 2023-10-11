@@ -10,7 +10,7 @@
                         </small>
                     </div>
                     <% } %>
-                        <% if (locals.user && post._id==comment.post.id) { %>
+                        <% if (locals.user && post.id==comment.post.id) { %>
                             <div class="delete-container">
                                 <small>
                                     <button class="delete-button"><a
@@ -24,7 +24,7 @@
                                         <%= comment.content %>
                                 </div>
 
-                                <small>
+                                <!-- <small>
                                     <% if (locals.user){%>
                                         <a class="toggle-like-button"
                                             href="/likes/toggle/?id=<%=comment._id%>&type =Comment"
@@ -34,7 +34,7 @@
                                         <%}else{%>
                                             <%= comment.likes.length%>Likes
                                                 <%}%>
-                                </small>
+                                </small> -->
             </p>
         </div>
 

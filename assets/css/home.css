@@ -1,6 +1,7 @@
 .home-container {
     display: flex;
     justify-content: center;
+    background-color: #1f293a;
 }
 
 .right {
@@ -11,15 +12,32 @@
     position: sticky;
 }
 
+.friends-container h1 {
+    margin-left: 100px;
+}
+
 .friends-container {
+
     height: 60vh;
     width: 25vw;
     overflow: auto;
-    box-shadow: 0px 0px 10px black;
+    background-color: #00cce1;
     border-radius: 10px;
     position: fixed;
     right: 3vw;
-    top: 20vh
+    top: 15vh
+}
+
+.friends-container ul {
+    list-style: none;
+}
+
+.friends-container ul a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #1f293a;
+    margin-left: 20px;
+    font-family: 'Poppins';
 }
 
 .friends-container::-webkit-scrollbar {
@@ -38,6 +56,11 @@
 
 .createPost {
     position: fixed;
-    bottom: 30vh;
-    right: 8vw;
+    bottom: 26vh;
+    right: 1vw;
+}
+
+#feed-posts {
+
+    margin-top: 8vh;
 }

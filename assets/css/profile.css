@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Poppins";
     font-size: 1.1rem;
 }
 
 body {
-    background-color: #84a4e9;
+    background-color: #212529;
 }
 
 .profile-image {
@@ -15,15 +15,16 @@ body {
 }
 
 .profile-image img {
-    width: 40vh;
+    width: 30vh;
     padding: 2vh;
-    height: 40vh;
-    margin-top: 2vh;
+    height: 30vh;
+    margin-top: 5vh;
     border-radius: 50%;
 }
 
 /* Update Form Container */
 .update-form-container {
+
     max-width: 300px;
     margin: 0 auto;
 }
@@ -36,6 +37,7 @@ body {
 .input-container label {
     display: block;
     margin-bottom: 5px;
+    color: #0ef;
 }
 
 .input-field {
@@ -43,6 +45,11 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    color: #212529;
+}
+
+.file-input {
+    color: #0ef;
 }
 
 /* Button Container */
@@ -51,8 +58,8 @@ body {
 }
 
 #update-button {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #212529;
+    color: #0ef;
     cursor: pointer;
     font-weight: bold;
     padding: 12px 20px;
@@ -60,3 +67,60 @@ body {
 }
 
 /* User Name and Email */
+
+
+/* From uiverse.io by @alshahwan */
+/* From uiverse.io by @alshahwan */
+button {
+    background-color: #fff;
+    border: 1px solid #0077b5;
+    padding: 5px;
+    position: relative;
+    width: 7.2em;
+    height: 2em;
+    transition: 0.5s;
+    font-size: 17px;
+    border-radius: 0.4em;
+}
+
+button p {
+    position: absolute;
+    top: 0.4em;
+    left: 1.2em;
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    color: #0077b5;
+}
+
+button svg {
+    position: absolute;
+    top: 0.45em;
+    right: 0.5em;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: 0.5s;
+    height: 1em;
+    fill: #fff
+}
+
+button:hover p {
+    left: 0.6em;
+    color: #0ef
+}
+
+button:hover svg {
+    opacity: 1;
+}
+
+button:hover {
+    background-color: #0ef;
+}
+
+.friend-list-profile {
+    display: flex;
+    width: 300px;
+    height: 100px;
+    background-color: #0ef;
+}

@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   background: #1f293a;
-  min-height: 87.8vh;
+  min-height: 100vh;
 }
 
 .container {
@@ -36,7 +36,7 @@
 
 @keyframes animateBlank {
   0% {
-    background: #0ef;
+    background: #00cce1;
   }
 
   25% {
@@ -79,7 +79,7 @@ h2 {
 
 .input-box input :focus,
 .input-box input :valid {
-  border-color: #0ef;
+  border-color: #00cce1;
 }
 
 .input-box label {
@@ -99,7 +99,7 @@ h2 {
   font-size: 0.8em;
   background-color: #1f293a;
   padding: 0 6px;
-  counter-reset: #0ef;
+  counter-reset: #00cce1;
 }
 
 .forget-password a {
@@ -118,7 +118,7 @@ h2 {
   width: 100%;
   height: 45px;
   border-radius: 45px;
-  background-color: #0ef;
+  background-color: #00cce1;
   border: none;
   outline: none;
   cursor: pointer;
