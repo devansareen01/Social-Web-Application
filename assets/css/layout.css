@@ -110,7 +110,7 @@ posts-list-container li:hover {
 
 
 #feed-posts {
-    padding: 20px;
+    margin-left: 10vw;
     width: 40vw;
 }
 
@@ -301,7 +301,7 @@ element.style {
     color: black;
 }
 
-.comment-wrapper {
+.post-div {
     display: flex;
     flex-direction: column;
 }
@@ -309,4 +309,8 @@ element.style {
 .Post_content {
     color: white;
     font-size: 1.2rem;
+}
+
+.container-fluid {
+    position: fixed;
 }

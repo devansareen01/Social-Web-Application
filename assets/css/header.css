@@ -5,19 +5,27 @@
     margin-right: 3vw;
     z-index: 2;
 }
+
 .nav-item img {
     height: 8vh;
     width: 8vh;
     border-radius: 50%;
 }
 
-.navbar a{
+.navbar a {
     color: #1f293a;
 }
 
 .custom-navbar-color {
     background-color: #0ef;
-} 
-.navbar-brand a{
+}
+
+.navbar-brand a {
     font-size: 30px;
+}
+
+.container-fluid {
+
+    padding: 40px 0px 10px 0px;
+
 }

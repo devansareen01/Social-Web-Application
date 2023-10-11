@@ -15,6 +15,7 @@ module.exports.create = async function (req, res) {
                 content: req.body.content,
                 post: post,
                 user: req.user,
+                username: req.user.name
             });
 
             post.comments.push(comment);
@@ -24,7 +25,7 @@ module.exports.create = async function (req, res) {
             // send the mail to user every time post get commented
 
 
-
+            res.redirect('/');
         }
     } catch (error) {
         console.log("Error:", error);

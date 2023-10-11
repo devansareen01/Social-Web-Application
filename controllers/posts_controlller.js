@@ -16,7 +16,7 @@ module.exports.create = async function (req, res) {
             }
             let post = await Post.create({
                 content: req.body.content,
-                user: req.user,
+                user: req.user._id,
                 media: media
             });
 
@@ -26,6 +26,7 @@ module.exports.create = async function (req, res) {
             return res.status(200).json({
                 data: {
                     post: post
+
                 },
                 message: "Post Created!"
             });
