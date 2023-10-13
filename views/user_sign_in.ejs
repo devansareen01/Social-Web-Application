@@ -1,33 +1,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="stylesheet" href="/css/sign_in.css">
 
-<div class="body">
-    <div class="container">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="/users/create-session" method="post">
 
-                <div class="input-box">
 
-                    <input type="email" name="email" required="required">
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="/users/create-session" method="post">
 
-                    <input type="password" name="password" required="required">
-                    <label>Password</label>
-                </div>
-                <div class="forget-password">
-                    <a href="/users/forgetPassword">Forgot Password?</a>
-                    <a href="auth/google">Sign in with Google</a>
-                </div>
-                <button type="submit" class="btn">Login</button>
-            </form>
-        </div>
+            <div class="input-box">
+
+                <input type="email" name="email" required="required">
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+
+                <input type="password" name="password" required="required">
+                <label>Password</label>
+            </div>
+            <div class="forget-password">
+                <a href="/users/forgetPassword">Forgot Password?</a>
+                <a href="auth/google">Sign in with Google</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
     </div>
+
     <span style="--i:0;"></span>
     <span style="--i:1;"></span>
     .
     .
     <span style="--i:49;"></span>
-</div>
+</body>

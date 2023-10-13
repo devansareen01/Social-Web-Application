@@ -1,51 +1,124 @@
-<link rel="stylesheet" href="css/home.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" <div>
-<div class="home-container">
+<!-- <link rel="stylesheet" href="css/home.css">
 
 
-    <div id="feed-posts">
+
+
+<div id="feed-posts">
+    <%if(locals.user){%>
+        <div id="posts-list-container">
+            <ul>
+                <% for (post of posts) { %>
+                    <%-include('_post')-%>
+                        <% } %>
+            </ul>
+        </div>
+        <%}%>
+</div>
+<% if(locals.user) { %>
+    <div class="right">
+        <div class="friends-container">
+
+            <h1>Friends</h1>
+            <ul class="friends-list">
+                <% for(u of all_users) { %>
+                    <li>
+                        <div class="friend_block">
+                            <img src="<%= u.avatar%>" alt="<%= u.name%>">
+                            <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
+                                <%= u.name %>
+                            </a>
+                        </div>
+                    </li>
+                    <% } %>
+            </ul>
+
+        </div>
+        <% } %>
+            <div class="createPost">
+                <% if (locals.user) { %>
+                    <form action="/posts/create" id="new-post-form" method="post" enctype="multipart/form-data">
+                        <textarea name="content" cols="30" rows="3" placeholder="Type Here..."
+                            required="required"></textarea>
+                        <input type="file" name="media" accept="image/*, video/*">
+                        <input type="submit" value="Post">
+                    </form>
+
+                    <% } %>
+            </div>
+    </div>
+
+
+    </div> -->
+
+<body>
+    <main>
         <%if(locals.user){%>
-            <div id="posts-list-container">
-                <ul>
-                    <% for (post of posts) { %>
-                        <%-include('_post')-%>
-                            <% } %>
-                </ul>
+            <div class="container">
+                <div class="left">
+                    <a href="/users/profile/<%= locals.user.id %>" class="profile">
+                        <div class="profile-photo">
+                            <img src="<%= locals.user.avatar %>" alt="<%= locals.user.name %>">
+                        </div>
+                        <div class="handle">
+                            <h4>
+                                <%= locals.user.name%>
+                            </h4>
+
+                        </div>
+                    </a>
+                    <div class="side-bar">
+                        <a href="/" class="menu-item active">
+                            <span><i class="uil uil-home"></i></span>
+                            <h3>Home</h3>
+                        </a>
+                        <a href="/" class="menu-item">
+                            <span><i class="uil uil-bell"></i></span>
+                            <h3>Notifications</h3>
+
+                        </a>
+                        <a href="/" class="menu-item">
+                            <span><i class="uil uil-envelope-alt"></i></span>
+                            <h3>Messages</h3>
+                        </a>
+                        <a href="/" class="menu-item">
+                            <span><i class="uil uil-compass"></i></span>
+                            <h3>Explore</h3>
+                        </a>
+                        <a href="/" class="menu-item">
+                            <span><i class="uil uil-setting"></i></span>
+                            <h3>Setting</h3>
+                        </a>
+                    </div>
+                    <!-- <label for="createPost" class="btn btn-primary"> Create Post</label> -->
+                </div>
+                <div class=" middle">
+                    <form class="create-post" action="/posts/create" method="post" enctype="multipart/form-data">
+                        <div class="profile-photo">
+                            <img src="<%= locals.user.avatar %>" alt="<%= locals.user.name %>">
+                        </div>
+
+                        <input type="text" name="content" placeholder="What's on your mind ?">
+                        <label for="media-upload" class="file-input-label">
+                            <i class=" fa fa-paperclip"></i>
+                        </label>
+                        <input type="file" id="media-upload" name="media" accept="image/*, video/*"
+                            class="hidden-input">
+                        <input type="submit" value="Post" class="btn btn-primary">
+                    </form>
+
+                    <div class="posts">
+                        <ul class="feeds">
+                            <% for (post of posts) { %>
+                                <%-include('_post')-%>
+                                    <% } %>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="right"></div>
+
             </div>
             <%}%>
-    </div>
-    <% if(locals.user) { %>
-        <div class="right">
-            <div class="friends-container">
-
-                <h1>Friends</h1>
-                <ul class="friends-list">
-                    <% for(u of all_users) { %>
-                        <li>
-                            <div class="friend_block">
-                                <img src="<%= u.avatar%>" alt="<%= u.name%>">
-                                <a href="/users/profile/<%= encodeURIComponent(u.id) %>">
-                                    <%= u.name %>
-                                </a>
-                            </div>
-                        </li>
-                        <% } %>
-                </ul>
-
-            </div>
-            <% } %>
-                <div class="createPost">
-                    <% if (locals.user) { %>
-                        <form action="/posts/create" id="new-post-form" method="post" enctype="multipart/form-data">
-                            <textarea name="content" cols="30" rows="3" placeholder="Type Here..."
-                                required="required"></textarea>
-                            <input type="file" name="media" accept="image/*, video/*">
-                            <input type="submit" value="Post">
-                        </form>
-
-                        <% } %>
-                </div>
-        </div>
-
-
-</div>
+    </main>
+</body>

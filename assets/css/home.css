@@ -1,66 +1,228 @@
-.home-container {
-    display: flex;
-    justify-content: center;
-    background-color: #1f293a;
+:root {
+    --color-white: hsl(252, 30%, 100%);
+    --color-light: hsl(252, 30%, 95%);
+    --color-grey: hsl(252, 15%, 65%);
+    --color-primary: hsl(252, 75%, 60%);
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-success: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, 17%);
+    --color-black: hsl(252, 30%, 10%);
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --search-padding: 0.6rem 1rem;
+    --btn-paddding: 0.6rem 2rem;
+    --card-padding: 1rem;
 }
 
-.right {
-    display: flex;
-    flex-direction: column;
-    margin-left: 27vw;
-    margin-top: 2vw;
-    position: sticky;
+body {
+    font-family: "Poppins";
 }
 
-.friends-container h1 {
-    margin-left: 100px;
-}
-
-.friends-container {
-
-    height: 60vh;
-    width: 25vw;
-    overflow: auto;
-    background-color: #00cce1;
-    border-radius: 10px;
-    position: fixed;
-    right: 3vw;
-    top: 15vh
-}
-
-.friends-container ul {
-    list-style: none;
-}
-
-.friends-container ul a {
+a {
     text-decoration: none;
-    font-size: 1.4rem;
-    color: #1f293a;
-    margin-left: 20px;
-    font-family: 'Poppins';
+    color: var(--color-black);
 }
 
-.friends-container::-webkit-scrollbar {
+main {
+    position: relative;
+    top: 5.4rem;
+}
+
+
+main .container {
+    display: grid;
+    grid-template-columns: 30vh auto 20vw;
+    column-gap: 2rem;
+    position: relative;
+
+}
+
+main .container .left {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-left);
+
+
+}
+
+main .container .left .profile {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+    padding: var(--card-padding);
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+
+}
+
+
+.main .container .left .side-bar {
+    margin-top: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: 1rem;
+
+}
+
+.main .container .left .profile .profile-photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.left .side-bar {
+    margin-top: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+}
+
+
+
+.left .side-bar .menu-item {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    cursor: pointer;
+    translate: all 300ms ease;
+    position: relative;
+}
+
+.left .side-bar .menu-item:hover {
+    background: var(--color-light);
+}
+
+.left .side-bar i {
+    font-size: 1.4rem;
+    color: var(--color-grey);
+    margin-left: 2rem;
+    position: relative;
+}
+
+.left .side-bar h3 {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.left .side-bar .active {
+    background: var(--color-light);
+
+}
+
+.left .side-bar .active i,
+.left .side-bar .active h3 {
+    color: var(--color-primary);
+}
+
+.left .side-bar .active::before {
+    content: "";
+    display: block;
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    background: var(--color-primary);
+}
+
+.left .side-bar .menu-item:first-child.active {
+    border-top-right-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left .side-bar .menu-item:first-child.active {
+    border-bottom-right-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left.btn {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.middle .create-post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: 0.4rem var(--card-padding);
+    border-radius: var(--border-radius);
+}
+
+.middle .create-post input[type="text"] {
+    border-style: none;
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+    margin-right: 1rem;
+}
+
+.hidden-input {
     display: none;
 }
 
-.friend_block {
-    height: 80px;
+
+
+.file-input-label i {
+    margin-right: 10px;
 }
 
-.friend_block img {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
+.hidden-input:valid+.file-input-label {
+    background-color: #2980b9;
 }
 
-.createPost {
-    position: fixed;
-    bottom: 26vh;
-    right: 1vw;
+.hidden-input:valid+.file-input-label::after {
+    content: "File Attached";
+    margin-left: 10px;
 }
 
-#feed-posts {
+.feed {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85 rem;
+    line-height: 1.5;
+}
 
-    margin-top: 8vh;
+.feed .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feed .head .user {
+    display: flex;
+    gap: 1rem;
+}
+
+.feed .photo {
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+}
+
+.feed .head .user .ingo h3 {
+    font-family: "Poppins";
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+}
+
+
+.feed .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+}
+
+.feed .caption {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+
 }

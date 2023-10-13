@@ -1,46 +1,45 @@
+:root {
+  --color-white: hsl(252, 30%, 100%);
+  --color-light: hsl(252, 30%, 95%);
+  --color-grey: hsl(252, 15%, 65%);
+  --color-primary: hsl(252, 75%, 60%);
+  --color-secondary: hsl(252, 100%, 90%);
+  --color-success: hsl(120, 95%, 65%);
+  --color-danger: hsl(0, 95%, 65%);
+  --color-dark: hsl(252, 30%, 17%);
+  --color-black: hsl(252, 30%, 10%);
+
+  ---border-radius: 2rem;
+  --card-border-radius: 1rem;
+  --search-padding: 0.6rem 1rem;
+  --btn-paddding: 0.6rem 2rem;
+  --card-padding: 1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Poppins";
-  box-sizing: 'border-box';
+  box-sizing: border-box;
 }
 
-.body {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1f293a;
+  background: var(--color-light);
   min-height: 100vh;
 }
 
-.container {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.container span {
-  position: relative;
-  left: 0;
-  width: 32px;
-  height: 6px;
-  background: #2c4766;
-  border-radius: 8px;
-  transform-origin: 128px;
-  animation: animationBlink 3s linear infinite;
-  animation-delay: calc(var --i) * (3s/50);
-}
 
 @keyframes animateBlank {
   0% {
-    background: #00cce1;
+    background: var(--color-black);
   }
 
   25% {
-    background: #2c4766;
+    background: var(--color-black);
   }
 }
 
@@ -56,7 +55,7 @@
 
 h2 {
   font-size: 2em;
-  color: #00cce1;
+  color: var(--color-primary)
 }
 
 .input-box {
@@ -68,18 +67,18 @@ h2 {
   width: 100%;
   height: 50px;
   background: transparent;
-  border: 2px solid #2c4766;
+  border: 2px solid var(--color-black);
   outline: none;
   border-radius: 40px;
   font-size: 1em;
-  color: #fff;
+  color: var(--color-dark);
   padding: 0 20 px;
   transition: 0.5s;
 }
 
 .input-box input :focus,
 .input-box input :valid {
-  border-color: #00cce1;
+  border-color: var(--color-black);
 }
 
 .input-box label {
@@ -88,7 +87,7 @@ h2 {
   left: 20px;
   transform: translateY(-50%);
   font-size: 1em;
-  color: #fff;
+  color: var(--color-primary);
   pointer-events: none;
   transition: 0.5s ease;
 }
@@ -96,17 +95,17 @@ h2 {
 .input-box input:focus~label,
 .input-box input:valid~label {
   top: 1px;
-  font-size: 0.8em;
-  background-color: #1f293a;
+  font-size: 1.2em;
+  background-color: var(--color-light);
   padding: 0 6px;
-  counter-reset: #00cce1;
+  counter-reset: var(--color-primary);
 }
 
 .forget-password a {
   font-size: 1em;
-  color: #fff;
+  color: var(--color-primary);
   text-decoration: none;
-  margin-left: 100px;
+  margin-left: 35px;
 
 }
 
@@ -114,15 +113,24 @@ h2 {
   text-decoration: underline;
 }
 
+
 .btn {
   width: 100%;
   height: 45px;
-  border-radius: 45px;
-  background-color: #00cce1;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: 1em;
-  color: #1f203a;
+  display: inline-block;
+  padding: var(--btn-paddding);
   font-weight: 600;
+  border-radius: var(---border-radius);
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
 }

@@ -1,93 +1,37 @@
-<!-- <li id="post-<%= post._id%>"> -->
-<li class="post-box">
-    <div class="post-div">
-        <div class="post-header">
-            <div class="post-user-image">
-                <img src="<%= post.user.avatar%>" alt="icon">
+<li class="feed">
+    <div class="head">
+        <div class="user">
+            <div class="profile-photo">
+                <img src="<%=post.user.avatar%>" alt="<%post.user.name%>">
             </div>
-            <h4>
-                <%= post.user.name %>
-            </h4>
-            <% if (locals.user && locals.user.id==post.user.id) { %>
-                <div class="delete-button">
-                    <button>
-                        <a href="/posts/destroy/<%= post.id %>"><i class="fa-solid fa-trash"></i></a>
-                    </button>
-                </div>
-                <% } %>
-        </div>
-
-        <!-- <div class="image-right">
-            <div class="row1">
-
-
+            <div class="ingo">
+                <h3>
+                    <%= post.user.name%>
+                </h3>
             </div>
-        </div> -->
-        <div class="Post_content">
-
-
-
-            <%if( post.media !=null){%>
-                <img class="post-image image-fluid" src="<%= post.media%>" alt="<%= post.user.name%>" width="100">
-                <%}%>
-                    <br>
-                    <%= post.content %>
-
-                        <small>
-                            <!-- <% if (locals.user){%>
-                                    <a class="toggle-like-button" href="/likes/toggle/?id=<%=post._id%>&type=Post"
-                                        data-likes="<%= post.likes.length%>">
-                                        <%= post.likes.length%>Likes
-                                    </a>
-                                    <%}else{%>
-                                        <%= post.likes.length%>Likes
-                                            <%}%> -->
-
-                            <div class="comment-react-nav-bar">
-                                <button>
-                                    <i class="fa-solid fa-thumbs-up"></i>
-                                </button>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal<%= post.id %>">
-                                    <i class="fa-regular fa-comment"></i>
-                                </button>
-                            </div>
-                        </small>
-
+            <span class="edit">
+                <i class="uil uil-ellipsis-h"></i>
+            </span>
         </div>
-
     </div>
+    <div class="photo">
+        <img src="<%=post.media%>" alt="<%=post.content%>">
+    </div>
+    <div class="action-buttons">
+        <div class="interaction-buttons">
+            <span><i class="uil uil-heart"></i></span>
+            <span><i class="uil uil-comment-dots"></i></span>
+            <span>
+                <% if (locals.user && locals.user.id==post.user.id) { %>
+                    <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> </a>
+                    <% } %>
+            </span>
+        </div>
+    </div>
+    <div class="caption">
+        <span>
+            <%=post.content%>
+        </span>
+    </div>
+
 </li>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog custom-modal-dialog ">
-        <div class="modal-content">
-            <div class="modal-header text-center">
-                <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Comments</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <div class="post-comments-list">
-                    <ul id="post-comments-<%= post.id %>">
-                        <% for (comment of post.comments) { %>
-                            <%-include('_comment')-%>
-                                <% } %>
-                    </ul>
-                </div>
-
-
-                <div class="modal-footer">
-                    <form action="/comments/create" method="POST" class="comment_Section">
-                        <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
-                        <input type="hidden" name="post" value="<%= post._id %>">
-                        <button type="submit" class="comment-Button">
-                            <img src="images/Untitled.png" alt="">
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
