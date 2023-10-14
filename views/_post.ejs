@@ -9,9 +9,7 @@
                     <%= post.user.name%>
                 </h3>
             </div>
-            <span class="edit">
-                <i class="uil uil-ellipsis-h"></i>
-            </span>
+
         </div>
     </div>
     <div class="photo">
@@ -20,18 +18,20 @@
     <div class="action-buttons">
         <div class="interaction-buttons">
 
-            <button class="toggle-like-button" data-postid="<%= post.id%>">
+            <button class="toggle-like-button like-button-style" data-postid="<%= post.id%>">
                 <i class="uil uil-heart"></i>
-                <span>
+                <sub class="text-muted">
                     <%= post.likes.length%>
-                </span>
+                </sub>
             </button>
 
-            <span><i class="uil uil-comment-dots"></i></span>
+            <span data-bs-toggle="modal" data-bs-target="#exampleModal<%= post.id %>"><i
+                    class="uil uil-comment-dots"></i></span>
             <span>
+
                 <% if (locals.user && locals.user.id==post.user.id) { %>
-                    <a href="/posts/destroy/<%= post.id %>" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal<%= post.id %>"><i class="bi bi-trash"></i> </a>
+                    //delete button is not showing
+                    <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> </a>
                     <% } %>
             </span>
         </div>
@@ -59,7 +59,7 @@
                     <ul id="post-comments-<%= post.id %>">
                         <% for (comment of post.comments) { %>
                             <%-include('_comment')-%>
-                        <% } %>
+                                <% } %>
                     </ul>
                 </div>
 

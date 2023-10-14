@@ -14,6 +14,9 @@
     --search-padding: 0.6rem 1rem;
     --btn-paddding: 0.6rem 2rem;
     --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
 }
 
 
@@ -36,7 +39,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -69,7 +72,7 @@ img {
 
 .btn-primary {
     background: var(--color-primary);
-    color: white;
+    color: var(--color-white);
 }
 
 .text-bold {
@@ -124,4 +127,8 @@ nav .create {
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+nav .create .sign-out a {
+    color: var(--color-white);
 }

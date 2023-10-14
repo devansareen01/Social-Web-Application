@@ -13,7 +13,7 @@
     <link href="/bootstrap/icons/bootstrap-icons.css" rel="stylesheet">
     <link href="/css/layout.css" rel="stylesheet">
     <link href="/css/header.css" rel="stylesheet">
-    <link href="/css/custom.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
     <%- style %>
 </head>
 
@@ -62,7 +62,7 @@
                             var $this = $(this);
                             var postId = $this.data('postid');
 
-                            var ajaxUrl = isLiked ? '/likes/unlike/?id=' + postId : '/likes/like/?id=' + postId;
+                            var ajaxUrl = '/likes/toggle/?id=' + postId;
 
                             $.ajax({
                                 type: 'GET',
@@ -71,9 +71,9 @@
                                     if (data.success) {
                                         var likesCount = data.likes;
                                         $this.data('likes', likesCount);
-                                        var isLiked = data.isLiked;
 
-                                        $this.find('i').nextAll('span:first').text(likesCount);
+
+                                        $this.find('i').nextAll('sub:first').text(likesCount);
                                     } else {
                                         console.error('Error:', data.error); // Log the error to the console
                                     }

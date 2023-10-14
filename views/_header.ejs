@@ -3,10 +3,14 @@
     <h2>Varta Chat</h2>
     <% if (!locals.user) { %>
       <div class="sign-up">
-        <a href="/users/sign_up">Sign Up</a>
+        <button class="btn btn-primary">
+          <a href="/users/sign_up">Sign Up</a>
+        </button>
       </div>
       <div class="sign-in">
-        <a href="/users/sign_in">Sign In</a>
+        <button class="btn btn-primary">
+          <a href="/users/sign_in">Sign In</a>
+        </button>
       </div>
       <%}%>
 
@@ -16,16 +20,18 @@
             <input type="search" placeholder="search">
           </div>
 
-          <div class="chat-box">
+          <!-- <div class="chat-box">
             <a href="/chatBox">ChatBox</a>
-          </div>
+          </div> -->
           <div class="create">
             <label class="btn btn-primary" for="creat-post">Create</label>
             <div class="profile-photo">
               <img src="<%= user.avatar %>" alt="<%= user.name %>">
             </div>
             <div class="sign-out">
-              <a href="/users/sign_out">Sign Out</a>
+              <button class="btn btn-primary">
+                <a href="/users/sign_out">Sign Out</a>
+              </button>
             </div>
           </div>
           <% } %>
