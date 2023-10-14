@@ -22,7 +22,6 @@
 
             <button class="toggle-like-button" data-postid="<%= post.id%>">
                 <i class="uil uil-heart"></i>
-
                 <span>
                     <%= post.likes.length%>
                 </span>
@@ -31,7 +30,8 @@
             <span><i class="uil uil-comment-dots"></i></span>
             <span>
                 <% if (locals.user && locals.user.id==post.user.id) { %>
-                    <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> </a>
+                    <a href="/posts/destroy/<%= post.id %>" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal<%= post.id %>"><i class="bi bi-trash"></i> </a>
                     <% } %>
             </span>
         </div>
@@ -43,3 +43,37 @@
     </div>
 
 </li>
+
+
+<div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog custom-modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Comments</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="post-comments-list">
+                    <ul id="post-comments-<%= post.id %>">
+                        <% for (comment of post.comments) { %>
+                            <%-include('_comment')-%>
+                        <% } %>
+                    </ul>
+                </div>
+
+
+                <div class="modal-footer">
+                    <form action="/comments/create" method="POST" class="comment_Section">
+                        <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
+                        <input type="hidden" name="post" value="<%= post._id %>">
+                        <button type="submit" class="comment-Button">
+                            <img src="images/Untitled.png" alt="">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
