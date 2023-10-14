@@ -19,7 +19,15 @@
     </div>
     <div class="action-buttons">
         <div class="interaction-buttons">
-            <span><i class="uil uil-heart"></i></span>
+
+            <button class="toggle-like-button" data-postid="<%= post.id%>">
+                <i class="uil uil-heart"></i>
+
+                <span>
+                    <%= post.likes.length%>
+                </span>
+            </button>
+
             <span><i class="uil uil-comment-dots"></i></span>
             <span>
                 <% if (locals.user && locals.user.id==post.user.id) { %>

@@ -33,6 +33,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
             <script src="/js/friendship.js"></script>
             <script src="/js/chat.js"></script>
+            <script src="/js/toogle_likes.js">  </script>
             <script>
         <% if (flash.success && flash.success.length > 0) {%>
                     new Noty({
@@ -57,12 +58,44 @@
             </script>
             <script>
                     $(document).ready(function () {
-                        const fromUserId = $('.profile-image').data('from-user-id');
-                        const toUserId = $('.profile-image').data('to-user-id');
-                        // Check the values of fromUserId and toUserId
-                        let friendshipButton = $('#friendship-button')[0];
-                        let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
+                        $('.toggle-like-button').click(function () {
+                            var $this = $(this);
+                            var postId = $this.data('postid');
+
+                            var ajaxUrl = isLiked ? '/likes/unlike/?id=' + postId : '/likes/like/?id=' + postId;
+
+                            $.ajax({
+                                type: 'GET',
+                                url: ajaxUrl,
+                                success: function (data) {
+                                    if (data.success) {
+                                        var likesCount = data.likes;
+                                        $this.data('likes', likesCount);
+                                        var isLiked = data.isLiked;
+
+                                        $this.find('i').nextAll('span:first').text(likesCount);
+                                    } else {
+                                        console.error('Error:', data.error); // Log the error to the console
+                                    }
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    console.error('AJAX Error:', textStatus, errorThrown); // Log AJAX error details to the console
+                                }
+                            });
+                        });
                     });
+
+
+
+            </script>
+            <script>
+                $(document).ready(function () {
+                    const fromUserId = $('.profile-image').data('from-user-id');
+                    const toUserId = $('.profile-image').data('to-user-id');
+                    // Check the values of fromUserId and toUserId
+                    let friendshipButton = $('#friendship-button')[0];
+                    let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
+                });
             </script>
             <script src="/js/chat_engine.js"></script>
             <%if(locals.user){%>
