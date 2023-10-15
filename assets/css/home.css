@@ -15,7 +15,7 @@
     --btn-paddding: 0.6rem 2rem;
     --card-padding: 1rem;
 
-    --sticky-top-left: 5.4rem;
+    --sticky-top-left: 5.6rem;
     --sticky-top-right: -18rem;
 }
 
@@ -44,7 +44,7 @@ main .container {
 
 main .container .left {
     height: max-content;
-    position: sticky;
+    position:sticky;
     top: var(--sticky-top-left);
 
 }
@@ -151,7 +151,7 @@ main .container .left .profile {
     margin-top: 1rem;
     background: var(--color-white);
     padding: 0.4rem var(--card-padding);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius);    
 }
 
 .middle .create-post input[type="text"] {
@@ -330,3 +330,50 @@ main .container .left .profile {
 
 
 }
+
+
+.modal-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 8vh;
+    background-color: var(--color-grey);
+    color: white;
+}
+
+
+
+.modal-body{
+    height: 70vh;
+    overflow: auto;
+    padding: 2rem;
+}
+
+.modal-body::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.modal-footer button{
+    height: 2rem;
+    border: none;
+}
+
+.comment-input{
+    height: 2rem;
+    width: 30vw;
+    border: none;
+}
+
+.comment_Section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

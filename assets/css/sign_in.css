@@ -48,6 +48,10 @@ body {
   width: 400px;
 }
 
+.login-box button{
+  margin-top: 1rem;
+}
+
 .login-box form {
   width: 100%;
   padding: 0 50 px;
@@ -61,6 +65,10 @@ h2 {
 .input-box {
   position: relative;
   margin: 25px 0;
+}
+
+.input-box input{
+  padding: 1rem;
 }
 
 .input-box input {
@@ -99,6 +107,11 @@ h2 {
   background-color: var(--color-light);
   padding: 0 6px;
   counter-reset: var(--color-primary);
+}
+
+.forget-password{
+  display: flex;
+  justify-content: center;
 }
 
 .forget-password a {

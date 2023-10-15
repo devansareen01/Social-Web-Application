@@ -1,61 +1,57 @@
 <link rel="stylesheet" href="/css/profile.css">
 
-
-
-
 <body>
-    <div class="profile-image" data-from-user-id="<%= locals.user.id %>" data-to-user-id="<%= profile_user.id %>">
-        <img src="<%= profile_user.avatar%>" alt="<%= profile_user.name%>" width="100">
+    <div class="left">
+        <h2>Profile</h2>
+        <p>You can update the details</p>
+        <div class="profile-image" data-from-user-id="<%= locals.user.id %>" data-to-user-id="<%= profile_user.id %>">
+            <img src="<%= profile_user.avatar%>" alt="<%= profile_user.name%>" width="100">
+        </div>
+    
+        <% if(user.id==profile_user.id){%>
+            <div class="update-form-container">
+                <form id="update-form" action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data"
+                    method="post">
+                    <div class="input-container">
+                        
+                        <input class="input-field" type="text" name="name" id="name" value="<%=profile_user.name%>"
+                            required>
+                    </div>
+                    <div class="input-container">
+                        
+                        <input class="input-field" type="text" name="email" id="email" value="<%=profile_user.email%>"
+                            required>
+                    </div>
+                    <div class="input-container">
+                        
+                        <input class="file-input" type="file" name="avatar" id="avatar">
+                    </div>
+                    <div class="button-container">
+                        <input id="update-button" type="submit" value="Update">
+                    </div>
+                </form>
+            </div>
     </div>
-
-    <% if(user.id==profile_user.id){%>
-        <div class="update-form-container">
-            <form id="update-form" action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data"
-                method="post">
-                <div class="input-container">
-                    <label for="name">Your Name</label>
-                    <input class="input-field" type="text" name="name" id="name" value="<%=profile_user.name%>"
-                        required>
-                </div>
-                <div class="input-container">
-                    <label for="email">Your Email</label>
-                    <input class="input-field" type="text" name="email" id="email" value="<%=profile_user.email%>"
-                        required>
-                </div>
-                <div class="input-container">
-                    <label for="avatar">Profile Picture</label>
-                    <input class="file-input" type="file" name="avatar" id="avatar">
-                </div>
-                <div class="button-container">
-                    <input id="update-button" type="submit" value="Update">
-                </div>
-            </form>
-        </div>
-        <div class="friend-list-profile">
-            <h2>Friends:</h2>
-            <!-- Assuming you want to display the friend names in a list -->
-            <ul>
-                <% friendNames.forEach((friendName)=> { %>
-                    <li>
-                        <%= friendName %>
-                    </li>
-                    <% }) %>
-            </ul>
-
-
-        </div>
-        <%}else{%>
-            <h1 class="user-name">
-                <%= profile_user.name%>
-            </h1>
-            <h1 class="user-email">
-                <%= profile_user.email%>
-            </h1>
-
-            <button id="friendship-button"></button>
-
-            <%}%>
-
-
+    
+    <div class="friend-list-profile">
+        <h2> Following </h2>
+        <ul>
+            <% friendNames.forEach((friendName)=> { %>
+                <li>
+                    <%= friendName %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    
+    <%}else{%>
+        <h1 class="user-name">
+            <%= profile_user.name%>
+        </h1>
+        <h1 class="user-email">
+            <%= profile_user.email%>
+        </h1>
+        <button id="friendship-button"></button>
+    <%}%>
 
 </body>

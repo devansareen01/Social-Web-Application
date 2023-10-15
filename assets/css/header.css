@@ -41,7 +41,9 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
+    display: flex;
 }
+
 
 .profile-photo {
     width: 3rem;
@@ -91,6 +93,7 @@ nav {
     padding: 0.7rem 0;
     position: fixed;
     z-index: 10;
+    top: 0;
 }
 
 nav .container {
@@ -131,4 +134,11 @@ nav .create {
 
 nav .create .sign-out a {
     color: var(--color-white);
+}
+
+.userNotLogged{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 1rem;
 }

@@ -51,7 +51,7 @@
         <div class="modal-content">
             <div class="modal-header text-center">
                 <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Comments</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> close </button>
             </div>
             <div class="modal-body">
 
@@ -59,20 +59,18 @@
                     <ul id="post-comments-<%= post.id %>">
                         <% for (comment of post.comments) { %>
                             <%-include('_comment')-%>
-                                <% } %>
+                        <% } %>
                     </ul>
                 </div>
-
-
-                <div class="modal-footer">
-                    <form action="/comments/create" method="POST" class="comment_Section">
-                        <input type="text" name="content" placeholder="Type Here to add comment..." required="required">
-                        <input type="hidden" name="post" value="<%= post._id %>">
-                        <button type="submit" class="comment-Button">
-                            <img src="images/Untitled.png" alt="">
-                        </button>
-                    </form>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <form action="/comments/create" method="POST" class="comment_Section">
+                    <input class="comment-input" type="text" name="content" placeholder="Type Here to add comment..." required="required">
+                    <input type="hidden" name="post" value="<%= post._id %>">
+                    <button type="submit" class="comment-Button">
+                        <img src="images/Untitled.png" alt="">
+                    </button>
+                </form>
             </div>
         </div>
     </div>
