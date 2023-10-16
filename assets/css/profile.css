@@ -1,45 +1,48 @@
-
-*{
+* {
     font-family: "Poppins";
     color: black;
 }
 
-body{
+body {
     margin-top: 14vh;
     display: flex;
     background-color: var(--color-light);
     justify-content: center;
     justify-content: space-evenly;
-    
+
 }
-.left{
+
+.left {
     display: flex;
     flex-direction: column;
     /* border: 2px solid black; */
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: white;
-    height:max-content;
+    background-color: var(--color-white);
+    height: max-content;
     width: max-content;
     border-radius: 20px;
-    background-color: var(--color-grey);
-    
+
 }
-.profile-image img{
+
+.profile-image img {
     height: 30vh;
-    width : 30vh;
+    width: 30vh;
     border-radius: 50%;
 }
-.update-form-container{
+
+.update-form-container {
     display: flex;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .input-container {
+    width: 25vw;
     height: 2.5rem;
     background-color: white;
     margin: 1rem;
@@ -49,13 +52,18 @@ body{
 }
 
 .input-container input {
+
     margin-left: 2rem;
     width: 100%;
 }
 
-.button-container{
+.input-container i {
+    margin-left: 1rem;
+}
+
+.button-container {
     height: 2rem;
-    background-color: white;
+
     margin: 1rem;
     display: flex;
     align-items: center;
@@ -65,16 +73,83 @@ body{
     border-radius: var(---border-radius);
     transition: all 300ms ease;
     font-size: 0.9rem;
-    background: var(--color-primary);
-    color: var(--color-white);
+
+
 }
 
-.button-container input{
+.button-container input {
     background: var(--color-primary);
 }
 
-.update-form-container input{
+.update-form-container input {
     border: none;
     align-items: center;
 }
 
+
+.friend-list-profile {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+
+.friend-list-profile .friend-requests {
+    margin-top: 1rem;
+
+}
+
+.friend-list-profile .friend-requests h5 {
+    color: var(--color-grey);
+    margin: 1rem 0;
+}
+
+.friend-list-profile .request {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 0.7rem;
+}
+
+.friend-list-profile .request .info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+.friend-list-profile .request .action {
+    display: flex;
+    gap: 1rem;
+}
+
+.friend-list-profile .friendHead {
+    width: 50%;
+    display: flex;
+    background-color: var(--color-primary);
+    border-radius: var(--card-border-radius);
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--btn-paddding);
+    font-weight: 500;
+    border-radius: var(---border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}

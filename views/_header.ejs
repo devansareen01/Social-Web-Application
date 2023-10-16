@@ -14,7 +14,7 @@
           </button>
         </div>
       </div>
-      
+
       <%}%>
 
         <% if (locals.user) { %>
@@ -23,11 +23,9 @@
             <input type="search" placeholder="search">
           </div>
 
-          <!-- <div class="chat-box">
-            <a href="/chatBox">ChatBox</a>
-          </div> -->
+
           <div class="create">
-            <label class="btn btn-primary" for="creat-post">Create</label>
+            <a href="/"><button class="btn btn-primary"> Home</button></a>
             <div class="profile-photo">
               <img src="<%= user.avatar %>" alt="<%= user.name %>">
             </div>

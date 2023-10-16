@@ -15,7 +15,8 @@ module.exports.create = async function (req, res) {
                 content: req.body.content,
                 post: post,
                 user: req.user,
-                username: req.user.name
+                username: req.user.name,
+                userAvatar: req.user.avatar
             });
 
             post.comments.push(comment);

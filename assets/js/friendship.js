@@ -54,7 +54,7 @@ class ToggleFriendship {
     }
 
     updateButtonText() {
-        const buttonText = this.isFriend ? 'Remove Friend' : 'Add Friend';
+        const buttonText = this.isFriend ? 'Unfollow' : 'Follow';
         $(this.buttonElement).text(buttonText);
     }
 

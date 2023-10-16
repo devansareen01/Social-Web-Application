@@ -29,10 +29,9 @@
                     class="uil uil-comment-dots"></i></span>
             <span>
 
-                <% if (locals.user && locals.user.id==post.user.id) { %>
-                    //delete button is not showing
-                    <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> </a>
-                    <% } %>
+                <%if(locals.user && locals.user.id==post.user.id){%>
+                    <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> Delete</a>
+                    <%}%>
             </span>
         </div>
     </div>
@@ -47,11 +46,11 @@
 
 <div class="modal fade" id="exampleModal<%= post.id %>" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog custom-modal-dialog ">
+    <div class="modal-dialog custom-modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Comments</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> close </button>
+                <button type="button" class="btn-close btn btn-primary" data-bs-dismiss="modal" aria-label="Close">
+                    close </button>
             </div>
             <div class="modal-body">
 
@@ -59,16 +58,17 @@
                     <ul id="post-comments-<%= post.id %>">
                         <% for (comment of post.comments) { %>
                             <%-include('_comment')-%>
-                        <% } %>
+                                <% } %>
                     </ul>
                 </div>
             </div>
             <div class="modal-footer">
                 <form action="/comments/create" method="POST" class="comment_Section">
-                    <input class="comment-input" type="text" name="content" placeholder="Type Here to add comment..." required="required">
+                    <input class="comment-input" type="text" name="content" placeholder="Type Here to add comment..."
+                        required="required">
                     <input type="hidden" name="post" value="<%= post._id %>">
-                    <button type="submit" class="comment-Button">
-                        <img src="images/Untitled.png" alt="">
+                    <button type="submit " class="comment-Button btn btn-primary">
+                        Submit
                     </button>
                 </form>
             </div>

@@ -4,43 +4,41 @@
     <div class="comment-container">
         <li>
             <div class="comment-wrapper">
-                <p>
-                    <% if (locals.user && locals.user.id==comment.user.id) { %>
-                        <div class="delete-container">
-                            <small>
-                                <button class="delete-button"><a href="/posts/destroy/<%= post.id %>"><i
-                                            lass="fa-solid fa-trash" style="color: black;"></i></a></button>
-                            </small>
-                        </div>
-                        <% } %>
-                            <% if (locals.user && post.id==comment.post.id) { %>
-                                <div class="delete-container">
-                                    <small>
-                                        <button class="delete-button"><a
-                                                href="/comments/destroy/<%= comment.id %>">Delete</a></button>
-                                    </small>
-                                </div>
-                                <% } %>
-                                    <div>
-                                        <%= comment.username%>
-                                            <br>
-                                            <%= comment.content %>
-                                    </div>
+                <div class="comment-first">
+                    <div class="profile-photo">
+                        <a href="/users/profile/<%= encodeURIComponent(comment.user._id) %>">
+                            <img src="<%= comment.userAvatar%>" alt="<%= comment.username%>">
+                        </a>
+                    </div>
+                    <div class="comment-info">
+                        <h5>
+                            <a href="/users/profile/<%= encodeURIComponent(comment.user._id) %>">
+                                <%= comment.username%>
+                            </a>
+                        </h5>
+                        <p class="text-muted">
+                            <%= comment.content%>
+                        </p>
 
-                                    <!-- <small>
-                                    <% if (locals.user){%>
-                                        <a class="toggle-like-button"
-                                            href="/likes/toggle/?id=<%=comment._id%>&type =Comment"
-                                            data-likes="<%= comment.likes.length%>">
-                                            <%= comment.likes.length%>Likes
-                                        </a>
-                                        <%}else{%>
-                                            <%= comment.likes.length%>Likes
-                                                <%}%>
-                                </small> -->
-                </p>
+
+                    </div>
+                </div>
+
+                <%if(locals.user && locals.user.id==comment.user._id){%>
+                    <div class="delete-container">
+                        <small>
+
+                            <button class="delete-button btn btn-primary"><a style="color: white;"
+                                    href="/comments/destroy/<%= comment.id %>">Delete</a></button>
+                        </small>
+                    </div>
+                    <%}%>
+
+
             </div>
+
 
         </li>
     </div>
+
 </body>

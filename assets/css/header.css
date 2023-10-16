@@ -83,6 +83,7 @@ img {
 
 .text-muted {
     color: var(--color-grey);
+
 }
 
 /*======================NAVBAR==========================*/
@@ -100,6 +101,10 @@ nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+nav .container a {
+    color: white;
 }
 
 nav .search-bar {
@@ -136,7 +141,7 @@ nav .create .sign-out a {
     color: var(--color-white);
 }
 
-.userNotLogged{
+.userNotLogged {
     display: flex;
     justify-content: center;
     align-items: end;

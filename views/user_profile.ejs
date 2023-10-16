@@ -7,51 +7,84 @@
         <div class="profile-image" data-from-user-id="<%= locals.user.id %>" data-to-user-id="<%= profile_user.id %>">
             <img src="<%= profile_user.avatar%>" alt="<%= profile_user.name%>" width="100">
         </div>
-    
+
         <% if(user.id==profile_user.id){%>
             <div class="update-form-container">
                 <form id="update-form" action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data"
                     method="post">
                     <div class="input-container">
-                        
+
                         <input class="input-field" type="text" name="name" id="name" value="<%=profile_user.name%>"
                             required>
                     </div>
                     <div class="input-container">
-                        
+
                         <input class="input-field" type="text" name="email" id="email" value="<%=profile_user.email%>"
                             required>
                     </div>
                     <div class="input-container">
-                        
-                        <input class="file-input" type="file" name="avatar" id="avatar">
+
+                        <label for="media-upload" class="file-input-label">
+                            <i class=" fa fa-paperclip"></i>
+                            Update your profile photo
+                        </label>
+                        <input type="file" id="media-upload" name="media" accept="image/*, video/*"
+                            class="hidden-input">
                     </div>
                     <div class="button-container">
-                        <input id="update-button" type="submit" value="Update">
+                        <button class="btn btn-primary" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
     </div>
-    
+
     <div class="friend-list-profile">
-        <h2> Following </h2>
+        <div class="friendHead">
+            <button class="btn btn-primary">Friends</button>
+        </div>
         <ul>
-            <% friendNames.forEach((friendName)=> { %>
+            <% friends.forEach((friend)=> { %>
                 <li>
-                    <%= friendName %>
+                    <div class="request">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <a href="/users/profile/<%= encodeURIComponent(friend.id) %>">
+                                    <img src="<%= friend.avatar%>" alt="<%= friend.name%>">
+                                </a>
+                            </div>
+                            <div>
+                                <h5>
+                                    <a href="/users/profile/<%= encodeURIComponent(friend.id) %>">
+                                        <%= friend.name%>
+                                    </a>
+                                </h5>
+                                <p class="text-muted">
+                                    @<%= friend.name%>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Unfollow
+                            </button>
+                        </div>
+                    </div>
+
                 </li>
-            <% }) %>
+                <% }) %>
         </ul>
     </div>
-    
+
     <%}else{%>
-        <h1 class="user-name">
+        <h1 class="text-muted">
             <%= profile_user.name%>
         </h1>
-        <h1 class="user-email">
+        <h1 class="text-muted">
             <%= profile_user.email%>
         </h1>
-        <button id="friendship-button"></button>
-    <%}%>
+        <button id="friendship-button" class="btn btn-primary">add friend</button>
+        <%}%>
 
 </body>

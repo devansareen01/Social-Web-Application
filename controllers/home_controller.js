@@ -17,16 +17,17 @@ module.exports.home = async function (req, res) {
                 }
             }).populate('likes');
 
-
+        console.log(posts);
 
         let users = await User.find({});
-        console.log(posts);
+
         return res.render('home', {
             title: "VARTACHAT | HOME",
             posts: posts,
             all_users: users,
 
         });
+
     } catch (error) {
         console.log("error", error);
         return;

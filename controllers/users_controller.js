@@ -12,26 +12,22 @@ module.exports.profile = async function (req, res) {
     try {
         let user = await User.findById(req.params.id);
 
-        // Assuming user.friends is an array of friend IDs
+
+        const friends = [];
 
 
-        // Create an empty array to store friend names
-        const friendNames = [];
-
-        // Iterate through the friend IDs and fetch the corresponding names
         for (const friendId of user.friends) {
             const friend = await User.findById(friendId);
             if (friend) {
-                friendNames.push(friend.name); // Assuming 'name' is the field containing friend names
+                friends.push(friend);
             }
         }
-        console.log(friendNames);
-        // Now 'friendNames' array contains the names of user's friends
+
 
         return res.render('user_profile', {
             title: "USER Profile",
             profile_user: user,
-            friendNames: friendNames, // Pass the friend names to the template
+            friends: friends
         });
     } catch (error) {
         console.log('Error in profile route:', error);
@@ -107,6 +103,7 @@ module.exports.create = async function (req, res) {
 
         if (!user) {
             const createdUser = await User.create(req.body);
+
             return res.redirect('/users/sign_in');
         } else {
             req.flash('error', 'User Already Exists');

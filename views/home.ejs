@@ -37,7 +37,7 @@
                             <h3>Setting</h3>
                         </a>
                     </div>
-                    <!-- <label for="createPost" class="btn btn-primary"> Create Post</label> -->
+
                 </div>
                 <div class=" middle">
                     <form class="create-post" action="/posts/create" method="post" enctype="multipart/form-data">
@@ -58,7 +58,7 @@
                         <ul class="feeds">
                             <% for (post of posts) { %>
                                 <%-include('_post')-%>
-                            <% } %>
+                                    <% } %>
                         </ul>
 
                     </div>
