@@ -96,6 +96,23 @@
                     let friendshipButton = $('#friendship-button')[0];
                     let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
                 });
+
+                $(document).ready(function () {
+                    $('.action').each(function () {
+                        const fromUserId = $(this).data('from-user-id');
+                        const toUserId = $(this).data('to-user-id');
+                        const friendshipButton = $(this).find('#friendship-button-' + toUserId); // Find the button within the current .action element
+                        new ToggleFriendship(friendshipButton, fromUserId, toUserId);
+                    });
+                }); uu
+
+                // $(document).ready(function () {
+                //     const fromUserId = $('.action').data('from-user-id');
+                //     const toUserId = $('.action').data('to-user-id');
+                //     // Check the values of fromUserId and toUserId
+                //     let friendshipButton = $()[0];
+                //     let toggleFriendship = new ToggleFriendship(friendshipButton, fromUserId, toUserId);
+                // });
             </script>
             <script src="/js/chat_engine.js"></script>
             <%if(locals.user){%>

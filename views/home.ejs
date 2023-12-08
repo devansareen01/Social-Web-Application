@@ -26,7 +26,9 @@
                         </a>
                         <a href="/" class="menu-item">
                             <span><i class="uil uil-envelope-alt"></i></span>
-                            <h3>Messages</h3>
+                            <a href="/chatbox">
+                                <h3>Messages</h3>
+                            </a>
                         </a>
                         <a href="/" class="menu-item">
                             <span><i class="uil uil-compass"></i></span>
@@ -90,8 +92,9 @@
                                         </div>
                                     </div>
 
-                                    <div class="action">
-                                        <button class="btn btn-primary">
+                                    <div class="action" data-from-user-id="<%= locals.user.id %>"
+                                        data-to-user-id="<%= u.id %>">
+                                        <button id="friendship-button-<%= u.id%>" class="btn btn-primary">
                                             Follow
                                         </button>
                                     </div>

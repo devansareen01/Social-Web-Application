@@ -4,13 +4,11 @@ class ToggleFriendship {
         this.buttonElement = buttonElement;
         this.isFriend = false;
         this.fromUserId = fromUserId;
-        this.toUserId = toUserId
+        this.toUserId = toUserId;
         this.initializeState();
-
         this.addClickHandler();
-
-
     }
+
     initializeState() {
         console.log('Initializing state...');
         // Initialize the friendship status based on the server's response
@@ -50,7 +48,7 @@ class ToggleFriendship {
         } else {
             this.removeFriend();
         }
-        this.updateButtonText();
+        this.updateButtonText(); 2   2
     }
 
     updateButtonText() {

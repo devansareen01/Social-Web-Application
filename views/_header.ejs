@@ -18,16 +18,23 @@
       <%}%>
 
         <% if (locals.user) { %>
+
+
           <div class="search-bar">
             <i class="uil uil-search"></i>
             <input type="search" placeholder="search">
           </div>
 
-
+          <!-- <button class="btn btn-primary">
+            <a href="/chatbox">Chatbox</a>
+          </button> -->
           <div class="create">
             <a href="/"><button class="btn btn-primary"> Home</button></a>
             <div class="profile-photo">
-              <img src="<%= user.avatar %>" alt="<%= user.name %>">
+              <a href="/users/profile/<%= encodeURIComponent(user.id) %>">
+                <img src="<%= user.avatar %>" alt="<%= user.name %>">
+              </a>
+
             </div>
             <div class="sign-out">
               <button class="btn btn-primary">

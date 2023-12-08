@@ -23,7 +23,7 @@ module.exports.create = async function (req, res) {
             await post.save();
 
             commentMailer.newCommment(comment);
-            // send the mail to user every time post get commented
+
 
 
             res.redirect('/');

@@ -7,7 +7,7 @@
                 <div class="comment-first">
                     <div class="profile-photo">
                         <a href="/users/profile/<%= encodeURIComponent(comment.user._id) %>">
-                            <img src="<%= comment.userAvatar%>" alt="<%= comment.username%>">
+                            <img src="/images/DefaulAvtar.jpeg" alt="<%= comment.username%>">
                         </a>
                     </div>
                     <div class="comment-info">
@@ -33,7 +33,15 @@
                         </small>
                     </div>
                     <%}%>
+                        <%if(locals.user && locals.user.id==post.user._id){%>
+                            <div class="delete-container">
+                                <small>
 
+                                    <button class="delete-button btn btn-primary"><a style="color: white;"
+                                            href="/comments/destroy/<%= comment.id %>">Delete</a></button>
+                                </small>
+                            </div>
+                            <%}%>
 
             </div>
 

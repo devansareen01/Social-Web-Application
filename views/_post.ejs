@@ -2,7 +2,10 @@
     <div class="head">
         <div class="user">
             <div class="profile-photo">
-                <img src="<%=post.user.avatar%>" alt="<%post.user.name%>">
+                <a href="/users/profile/<%= encodeURIComponent(post.user.id) %>">
+                    <img src="<%=post.user.avatar%>" alt="<%post.user.name%>">
+                </a>
+
             </div>
             <div class="ingo">
                 <h3>
@@ -30,7 +33,10 @@
             <span>
 
                 <%if(locals.user && locals.user.id==post.user.id){%>
-                    <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> Delete</a>
+                    <button class="post-delete-button btn btn-primary">
+                        <a href="/posts/destroy/<%= post.id %>"><i class="bi bi-trash"></i> Delete</a>
+
+                    </button>
                     <%}%>
             </span>
         </div>

@@ -435,3 +435,10 @@ main .container .left .profile {
     margin-top: 1rem;
     margin-left: 19rem;
 }
+
+.feed .action-buttons .post-delete-button {}
+
+
+.feed .action-buttons a {
+    color: white;
+}
